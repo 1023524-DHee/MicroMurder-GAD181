@@ -20,4 +20,13 @@ public class EventManager : MonoBehaviour
 			onObjectMouseBehaviour(colourParam);
 		}
 	}
+
+	public event Action onMainMenuButtonHover;
+	public void MainMenuButtonHover()
+	{
+		if (onMainMenuButtonHover != null)
+		{
+			onMainMenuButtonHover();
+		}
+	}
 }
