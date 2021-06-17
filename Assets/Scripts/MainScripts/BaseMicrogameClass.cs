@@ -12,7 +12,7 @@ public class BaseMicrogameClass : MonoBehaviour
 
     public void NextMicrogame()
     {
-        MicrogameManager.RandomizeMicrogame(this);
+        MicrogameManager.current.LoadNextMicrogame();
     }
 
     public string GetNextAvailableRandomScene()
