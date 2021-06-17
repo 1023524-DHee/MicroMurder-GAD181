@@ -814,8 +814,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.74875003, y: 0.05}
   m_AnchorMax: {x: 0.9512501, y: 0.18666668}
-  m_AnchoredPosition: {x: 1, y: 0}
-  m_SizeDelta: {x: -98, y: -50}
+  m_AnchoredPosition: {x: 0.0020446777, y: 0}
+  m_SizeDelta: {x: -151.14, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1317347718
 MonoBehaviour:
@@ -1016,8 +1016,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da184d685a929934d89c54856ee1779a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMicrogamesArray:
-  - {fileID: 4913039261723946266, guid: d822a6d9c630a834aae98e955aac87ae, type: 3}
+  premurderMicrogames:
+  - FollowingSomeone_MG
+  meleeMurderMicrogames: []
+  gunMurderMicrogames:
+  - ShootSniper_MG
+  cleanupMicrogames:
+  - AxeCutting_MG
+  chaseMicrogames:
+  - CarChase_MG
+  caughtMicrogames:
+  - Lying_MG
+  jailMicrogames:
+  - BreakOut_MG
+  startingMicrogame: Disclaimer_MG
 --- !u!114 &1503674803
 MonoBehaviour:
   m_ObjectHideFlags: 0
