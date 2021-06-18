@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioClip buttonHoverClip;
+	public AudioClip buttonHoverClip, startButtonClickClip;
 
 	private AudioSource audioSource;
 
@@ -15,7 +15,16 @@ public class AudioManager : MonoBehaviour
 
 	public void PlayHoverSound()
     {
-		audioSource.clip = buttonHoverClip;
-		audioSource.Play();
+		PlaySound(buttonHoverClip);
     }
+	public void PlayStartClickSound()
+	{
+		PlaySound(startButtonClickClip);
+	}
+
+	void PlaySound(AudioClip clip_param)
+	{
+		audioSource.clip = clip_param;
+		audioSource.Play();
+	}
 }

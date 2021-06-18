@@ -22,11 +22,16 @@ public class MicrogameManager : MonoBehaviour
 
 	[SerializeField]
 	private string startingMicrogame;
-	private static string currentMicrogameName;
+
+	[SerializeField]
+	private List<string> triggerGunMicrogames = new List<string>();
+
+	//private static string currentMicrogameName;
 
 	public static MicrogameManager current;
 
 	private bool FirstMicrogame = true;
+	private bool gunMicrogame;
 	private MicrogameState currentState;
 
 	private void Awake()
@@ -36,12 +41,14 @@ public class MicrogameManager : MonoBehaviour
 
 	public void StartMicrogames()
 	{
+		// If Microgame loop hasn't started yet
 		if (startingMicrogame != null && FirstMicrogame)
 		{
+			SceneTransitionManager.current.LoadNextLevel(startingMicrogame);
 			FirstMicrogame = false;
 			currentState = MicrogameState.DISCLAIMER;
-			currentMicrogameName = startingMicrogame;
-			SceneManager.LoadScene(currentMicrogameName);
+			//currentMicrogameName = startingMicrogame;
+			
 		}
 	}
 
@@ -50,30 +57,49 @@ public class MicrogameManager : MonoBehaviour
 		string nextMicrogame = "";
 		switch (currentState)
 		{
+			// Starts Pre-Murder Microgames
 			case MicrogameState.DISCLAIMER:
 				currentState = MicrogameState.PREMURDER;
 				nextMicrogame = RandomiseMicrogame(premurderMicrogames);
+				if (triggerGunMicrogames.Contains(nextMicrogame))
+				{
+					gunMicrogame = true;
+				}
 				break;
+			// Starts Murder Microgames
 			case MicrogameState.PREMURDER:
 				currentState = MicrogameState.MURDER;
-				nextMicrogame = RandomiseMicrogame(gunMurderMicrogames);
+				switch (gunMicrogame)
+				{
+					case true:
+						nextMicrogame = RandomiseMicrogame(gunMurderMicrogames);
+						break;
+					case false:
+						nextMicrogame = RandomiseMicrogame(meleeMurderMicrogames);
+						break;
+				}
 				break;
+			// Starts Clean Up Microgames
 			case MicrogameState.MURDER:
 				currentState = MicrogameState.CLEANUP;
 				nextMicrogame = RandomiseMicrogame(cleanupMicrogames);
 				break;
+			// Starts Chase Microgames
 			case MicrogameState.CLEANUP:
 				currentState = MicrogameState.CHASE;
 				nextMicrogame = RandomiseMicrogame(chaseMicrogames);
 				break;
+			// Starts Caught Microgames
 			case MicrogameState.CHASE:
 				currentState = MicrogameState.CAUGHT;
 				nextMicrogame = RandomiseMicrogame(caughtMicrogames);
 				break;
+			// Starts Jail Microgames
 			case MicrogameState.CAUGHT:
 				currentState = MicrogameState.JAIL;
 				nextMicrogame = RandomiseMicrogame(jailMicrogames);
 				break;
+			// Starts End Microgames
 			case MicrogameState.JAIL:
 				currentState = MicrogameState.END;
 				break;
@@ -81,6 +107,7 @@ public class MicrogameManager : MonoBehaviour
 		SceneManager.LoadScene(nextMicrogame);
 	}
 
+	// Chooses a random scene from a list of scenes
 	private string RandomiseMicrogame(string[] microgameScenes)
 	{
 		return microgameScenes[Random.Range(0,microgameScenes.Length)];
