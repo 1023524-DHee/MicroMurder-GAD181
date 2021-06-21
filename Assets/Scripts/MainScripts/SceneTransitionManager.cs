@@ -9,6 +9,7 @@ public class SceneTransitionManager : MonoBehaviour
 
     public Animator transition;
     public float transitionTime;
+    public string transitionTriggerName;
 
 	private void Awake()
 	{
@@ -22,10 +23,8 @@ public class SceneTransitionManager : MonoBehaviour
 
     IEnumerator LoadLevel(string sceneName)
     {
-        transition.gameObject.SetActive(true);
-
+        transition.SetTrigger(transitionTriggerName);
         yield return new WaitForSeconds(transitionTime);
-
         SceneManager.LoadScene(sceneName);
     }
 }
