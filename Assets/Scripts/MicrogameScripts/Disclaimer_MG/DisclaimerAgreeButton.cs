@@ -9,8 +9,6 @@ public class DisclaimerAgreeButton : MonoBehaviour
 	private int currentTextAmount;
 
 	public GameObject AgreeButton;
-	public AudioClip textPlacedClip, textPlacedFailClip;
-
 	private void Start()
 	{
 		totalTextAmount = GameObject.FindGameObjectsWithTag("Text").Length;
@@ -19,7 +17,6 @@ public class DisclaimerAgreeButton : MonoBehaviour
 
 	private void TextPlaced()
 	{
-		AudioManager.current.PlaySound(textPlacedClip);
 		currentTextAmount++;
 		if (currentTextAmount == totalTextAmount)
 		{

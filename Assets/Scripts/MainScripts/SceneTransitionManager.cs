@@ -23,6 +23,7 @@ public class SceneTransitionManager : MonoBehaviour
 
     IEnumerator LoadLevel(string sceneName)
     {
+        transition.SetTrigger("StartDimming");
         transition.SetTrigger(transitionTriggerName);
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneName);
