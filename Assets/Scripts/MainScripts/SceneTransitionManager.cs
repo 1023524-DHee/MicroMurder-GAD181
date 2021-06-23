@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneTransitionManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class SceneTransitionManager : MonoBehaviour
 
     IEnumerator LoadLevel(string sceneName)
     {
+        transition.gameObject.GetComponent<Image>().raycastTarget = true;
         transition.SetTrigger("StartDimming");
         transition.SetTrigger(transitionTriggerName);
         yield return new WaitForSeconds(transitionTime);

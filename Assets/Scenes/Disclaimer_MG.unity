@@ -439,7 +439,6 @@ GameObject:
   - component: {fileID: 843556542}
   - component: {fileID: 843556540}
   - component: {fileID: 843556541}
-  - component: {fileID: 843556543}
   - component: {fileID: 843556544}
   - component: {fileID: 843556545}
   m_Layer: 0
@@ -488,21 +487,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &843556543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843556539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744467b8bb9f335438a6fb2329ef7439, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition: {fileID: 1288571959019871266}
-  transitionTime: 4
-  transitionTriggerName: End_Transition
 --- !u!114 &843556544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2200,6 +2184,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1843260461}
     m_Modifications:
+    - target: {fileID: 1942088320, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
+      propertyPath: transitionTriggerName
+      value: End_Transition
+      objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574194, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_Name
       value: TransitionPanel
@@ -2288,21 +2276,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1410253059061439563, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 6399207567631608191, guid: 712fc0c57f24ac94f92b25a3cce96dae, type: 3}
-    - target: {fileID: 1410253059061439563, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
---- !u!95 &1288571959019871266 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1410253057853574204, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
-  m_PrefabInstance: {fileID: 176718944905580574}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1288571959019871277 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
