@@ -12,12 +12,10 @@ public class InputManager : MonoBehaviour
 		if (Input.GetMouseButtonUp(0)) // Left Up
 		{
 			//EDIT FROM HERE ON
-			EventManager.current.ObjectMouseBehaviour(Color.green);
 		}
 		else if (Input.GetMouseButtonUp(1)) // Right Up
 		{
 			//EDIT FROM HERE ON
-			EventManager.current.ObjectMouseBehaviour(Color.yellow);
 		}
 	}
 
@@ -28,24 +26,20 @@ public class InputManager : MonoBehaviour
 			timeSinceClick = Time.time;
 
 			//EDIT FROM HERE ON
-			EventManager.current.ObjectMouseBehaviour(Color.red);
 		}
 		else if (Input.GetMouseButtonDown(1)) // Right Down
 		{
 			timeSinceClick = Time.time;
 
 			//EDIT FROM HERE ON
-			EventManager.current.ObjectMouseBehaviour(Color.blue);
 		}
 		else if (Input.GetMouseButton(0) && Time.time - timeSinceClick > 0.1f) // Left Drag
 		{
 			//EDIT FROM HERE ON
-			EventManager.current.ObjectMouseBehaviour(Color.black);
 		}
 		else if (Input.GetMouseButton(1) && Time.time - timeSinceClick > 0.1f) // Right Drag
 		{
 			//EDIT FROM HERE ON
-			EventManager.current.ObjectMouseBehaviour(Color.grey);
 		}
 	}
 }

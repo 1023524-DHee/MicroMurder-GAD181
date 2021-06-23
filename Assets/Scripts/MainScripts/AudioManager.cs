@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+	public static AudioManager current;
+
 	public AudioClip buttonHoverClip, startButtonClickClip;
 
 	private AudioSource audioSource;
 
 	private void Awake()
 	{
+		current = this;
 		audioSource = GetComponent<AudioSource>();
 	}
 
@@ -22,7 +25,7 @@ public class AudioManager : MonoBehaviour
 		PlaySound(startButtonClickClip);
 	}
 
-	void PlaySound(AudioClip clip_param)
+	public void PlaySound(AudioClip clip_param)
 	{
 		audioSource.clip = clip_param;
 		audioSource.Play();
