@@ -12,21 +12,5 @@ public class EventManager : MonoBehaviour
 		current = this;
 	}
 
-	public event Action<Color> onObjectMouseBehaviour;
-	public void ObjectMouseBehaviour(Color colourParam)
-	{
-		if (onObjectMouseBehaviour != null)
-		{
-			onObjectMouseBehaviour(colourParam);
-		}
-	}
-
-	public event Action onMainMenuButtonHover;
-	public void MainMenuButtonHover()
-	{
-		if (onMainMenuButtonHover != null)
-		{
-			onMainMenuButtonHover();
-		}
-	}
+	
 }
