@@ -6,7 +6,6 @@ public class ChangeColour : MonoBehaviour
 {
 	private void Start()
 	{
-		EventManager.current.onObjectMouseBehaviour += ChangeObjectColour;
 	}
 
 	public void ChangeObjectColour(Color colourToChange)
