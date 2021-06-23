@@ -104,7 +104,7 @@ public class MicrogameManager : MonoBehaviour
 				currentState = MicrogameState.END;
 				break;
 		}
-		SceneManager.LoadScene(nextMicrogame);
+		SceneTransitionManager.current.LoadNextLevel(nextMicrogame);
 	}
 
 	// Chooses a random scene from a list of scenes
