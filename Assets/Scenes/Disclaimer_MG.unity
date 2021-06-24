@@ -2186,7 +2186,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1942088320, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: transitionTriggerName
-      value: End_Transition
+      value: PreMurder_Transition
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574194, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_Name
