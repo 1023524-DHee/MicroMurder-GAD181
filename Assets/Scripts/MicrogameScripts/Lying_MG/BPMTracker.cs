@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// BPM Speed is divided by 60.
 public class BPMTracker : MonoBehaviour
 {
     private bool canPress = false;
     private bool BPMChanged = false;
     private bool pressed = false;
 
+    public AudioClip heart60Clip, heart120Clip, heart150Clip;
+    public AudioSource audioSource;
     public float currentBPM;
     public float amountToChange;
     public GameObject heartSprite;
@@ -17,6 +21,7 @@ public class BPMTracker : MonoBehaviour
     void Start()
     {
         StartCoroutine(ShrinkCircle());
+        audioSource.clip = heart60Clip;
     }
 
 	private void Update()
@@ -34,11 +39,18 @@ public class BPMTracker : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SetBPMValue(amountToChange);
+            SetBPMValue(1f);
         }
-
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SetBPMValue(0.5f);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SetBPMValue(0.4f);
+        }
     }
 
     // Shrinks the timing circle
@@ -51,7 +63,7 @@ public class BPMTracker : MonoBehaviour
         while(Time.time < endTime)
         {
             circleSprite.transform.localScale = Vector3.Lerp(initCircleScale, new Vector3(0.5f,0.5f,0.5f), (Time.time-startTime)/currentBPM);
-            if (circleSprite.transform.localScale.x < 1.3f)
+            if (circleSprite.transform.localScale.x < 1.5f)
             {
                 canPress = true;
             }
@@ -59,7 +71,7 @@ public class BPMTracker : MonoBehaviour
         }
         canPress = false;
         circleSprite.transform.localScale = initCircleScale;
-
+        audioSource.Play();
         if (!pressed)
         {
             HealthBar.current.TakeDamage(true);
