@@ -4,21 +4,40 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public float speed;
+    private bool moving;
+    private int currentDirection;
+
     public Animator animator;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-
+        moving = false;
+        currentDirection = 1;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (moving)
+        {
+            this.transform.Translate(new Vector2(Time.deltaTime * 2, 0));
+        }
+
+        animator.SetBool("Moving", moving);
+
+    }
+    
+    public void Move(int direction)
+    {
+        moving = true;
+
+        if(currentDirection < 0 && direction > 0)
+        {
+            currentDirection = 1;
+        }
+    }
+
+    public void Stop()
+    {
+        moving = false;
     }
 }

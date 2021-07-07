@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 0307881b9ebb65b48988fbe0ac635977
+guid: fa0d9eb7f2fc8864697d7a5456ce8b17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5127275323955397864
-    second: NewWalk_0
+      213: 5970645008644575372
+    second: NewWalk-sheet_0
   - first:
-      213: 2932007136604108052
-    second: NewWalk_1
+      213: -1857176996354826659
+    second: NewWalk-sheet_1
   - first:
-      213: -82063135131433472
-    second: NewWalk_2
+      213: 7195623459023834563
+    second: NewWalk-sheet_2
   - first:
-      213: 7400658018966391806
-    second: NewWalk_3
+      213: 4429356764252617682
+    second: NewWalk-sheet_3
+  - first:
+      213: -1821307152168444802
+    second: NewWalk-sheet_4
+  - first:
+      213: 7483489537687401407
+    second: NewWalk-sheet_5
+  - first:
+      213: -9116774535354274636
+    second: NewWalk-sheet_6
+  - first:
+      213: 2528148884668378244
+    second: NewWalk-sheet_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,18 +112,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -139,11 +139,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NewWalk_0
+      name: NewWalk-sheet_0
       rect:
         serializedVersion: 2
         x: 12
-        y: 6
+        y: 38
         width: 13
         height: 21
       alignment: 0
@@ -153,18 +153,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81b3302224248d8b0800000000000000
-      internalID: -5127275323955397864
+      spriteID: c801834600efbd250800000000000000
+      internalID: 5970645008644575372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewWalk_1
+      name: NewWalk-sheet_1
       rect:
         serializedVersion: 2
         x: 43
-        y: 6
+        y: 37
         width: 13
         height: 21
       alignment: 0
@@ -174,18 +174,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 415b230d4f490b820800000000000000
-      internalID: 2932007136604108052
+      spriteID: d5e5e3f8c5bf936e0800000000000000
+      internalID: -1857176996354826659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewWalk_2
+      name: NewWalk-sheet_2
       rect:
         serializedVersion: 2
         x: 75
-        y: 6
+        y: 38
         width: 13
         height: 21
       alignment: 0
@@ -195,17 +195,59 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 006065d63047cdef0800000000000000
-      internalID: -82063135131433472
+      spriteID: 3cd4594796dfbd360800000000000000
+      internalID: 7195623459023834563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewWalk_3
+      name: NewWalk-sheet_3
       rect:
         serializedVersion: 2
         x: 107
+        y: 37
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2db30c4628c387d30800000000000000
+      internalID: 4429356764252617682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewWalk-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 5
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c1f187bca69b6e0800000000000000
+      internalID: -1821307152168444802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewWalk-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 40
         y: 6
         width: 13
         height: 21
@@ -216,8 +258,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efb43a4024b64b660800000000000000
-      internalID: 7400658018966391806
+      spriteID: fb3b536d512bad760800000000000000
+      internalID: 7483489537687401407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewWalk-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 5
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bca1e2ecd5ba7180800000000000000
+      internalID: -9116774535354274636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewWalk-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 6
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c65f1140ac51320800000000000000
+      internalID: 2528148884668378244
       vertices: []
       indices: 
       edges: []
