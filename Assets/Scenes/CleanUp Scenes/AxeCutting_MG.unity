@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 430086508}
   - component: {fileID: 430086507}
   - component: {fileID: 430086506}
+  - component: {fileID: 430086510}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -281,6 +282,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &430086510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430086505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c036557ba9b3f74b856323d7f610237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &520668207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -500,6 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e482be76ed9a5054c91896710335b9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chargeBarAmount: 0
   chargeBarSprites:
   - {fileID: 982239478494867447, guid: 3addef8112aedfd4685551466b6eef49, type: 3}
   - {fileID: 3292598317655841357, guid: 3addef8112aedfd4685551466b6eef49, type: 3}

@@ -5,34 +5,49 @@ using UnityEngine.UI;
 
 public class ChargeBar : MonoBehaviour
 {
-    private float chargeBarAmount;
+    public float chargeBarAmount;
     public List<Sprite> chargeBarSprites = new List<Sprite>();
-    
+
     void Start()
     {
         chargeBarAmount = 0f;
-        
+
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        //if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             chargeBarAmount++;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        //if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             chargeBarAmount--;
         }
         ChargeBarImageChange();
+        if (chargeBarAmount < 11f)
+        {
+            StopCoroutine("ChargeBarFlash");
+
+        }
+
+        
+
     }
 
-    
-    
+    public void IncreaseCharge()
+    {
+        chargeBarAmount++;
+    }
+    public void DecreaseCharge()
+    {
+        chargeBarAmount--;
+    }
+
 
     void ChargeBarImageChange()
     {
-        switch(chargeBarAmount)
+        switch (chargeBarAmount)
         {
             case 0:
                 gameObject.GetComponent<Image>().sprite = chargeBarSprites[0];
@@ -79,29 +94,39 @@ public class ChargeBar : MonoBehaviour
                 break;
 
             case 11:
-                gameObject.GetComponent<Image>().sprite = chargeBarSprites[11];
+                StartCoroutine("ChargeBarFlash");
                 break;
         }
-         
-       
+
+
     }
-    
-    void ChargeBarFlash()
+
+    IEnumerator ChargeBarFlash()
     {
-        while (gameObject.GetComponent<Image>().sprite = chargeBarSprites[11])
+        while (chargeBarAmount >= 11f)
         {
-
-
+            gameObject.GetComponent<Image>().sprite = chargeBarSprites[11];
+            yield return new WaitForSeconds(1f);
+            gameObject.GetComponent<Image>().sprite = chargeBarSprites[12];
+            yield return new WaitForSeconds(1f);
+           
         }
-
-
+        yield return new WaitForSeconds(1f);
+        //yield return null;
     }
-
-
-
-
-
-
 }
+
+
+    
+    
+
+    
+
+
+
+
+
+
+
 
 
