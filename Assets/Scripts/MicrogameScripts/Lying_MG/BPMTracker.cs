@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 // BPM Speed is divided by 60.
 public class BPMTracker : MonoBehaviour
@@ -10,18 +10,21 @@ public class BPMTracker : MonoBehaviour
     private bool BPMChanged = false;
     private bool pressed = false;
 
-    public AudioClip heart60Clip, heart120Clip, heart150Clip;
+    public AudioClip heartbeatClip;
     public AudioSource audioSource;
     public float currentBPM;
     public float amountToChange;
     public GameObject heartSprite;
     public GameObject circleSprite;
+    public Image blackoutImage;
+
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ShrinkCircle());
-        audioSource.clip = heart60Clip;
+        StartCoroutine(RandomChangeBPM());
+        audioSource.clip = heartbeatClip;
     }
 
 	private void Update()
@@ -32,24 +35,19 @@ public class BPMTracker : MonoBehaviour
             if (canPress)
             {
                 HealthBar.current.TakeDamage(false);
+                if (currentBPM < 1f)
+                {
+                    SetBPMValue(currentBPM + 0.1f);
+                }
             }
             else
             {
                 HealthBar.current.TakeDamage(true);
+                if (currentBPM > 0.4f)
+                {
+                    SetBPMValue(currentBPM - 0.1f);
+                }
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SetBPMValue(1f);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SetBPMValue(0.5f);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SetBPMValue(0.4f);
         }
     }
 
@@ -69,13 +67,20 @@ public class BPMTracker : MonoBehaviour
             }
             yield return null;
         }
+
         canPress = false;
         circleSprite.transform.localScale = initCircleScale;
         audioSource.Play();
+
         if (!pressed)
         {
             HealthBar.current.TakeDamage(true);
+            if (currentBPM > 0.4f)
+            {
+                SetBPMValue(currentBPM - 0.1f);
+            }
         }
+
         pressed = false;
         HandleBPMChange();
     }
@@ -98,11 +103,10 @@ public class BPMTracker : MonoBehaviour
         amountToChange = newBPMValue;
     }
 
-    public void ClickDetected()
+    IEnumerator RandomChangeBPM()
     {
-        if (canPress)
-        {
-            HealthBar.current.TakeDamage(false);
-        }
+        yield return new WaitForSeconds(5f);
+        SetBPMValue(0.3f);
+        StartCoroutine(RandomChangeBPM());
     }
 }
