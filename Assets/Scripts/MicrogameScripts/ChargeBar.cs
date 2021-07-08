@@ -7,6 +7,7 @@ public class ChargeBar : MonoBehaviour
 {
     public float chargeBarAmount;
     public List<Sprite> chargeBarSprites = new List<Sprite>();
+    public Animator chargeBarAnimator;
 
     void Start()
     {
@@ -16,21 +17,21 @@ public class ChargeBar : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (chargeBarAmount != 0f)
         {
-            chargeBarAmount++;
+            StartCoroutine("DecreaseChargeCoroutine");
         }
-        //if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            chargeBarAmount--;
-        }
+            
         ChargeBarImageChange();
+        
         if (chargeBarAmount < 11f)
         {
-            StopCoroutine("ChargeBarFlash");
-
+            StopFlash();
         }
-
+        if(chargeBarAmount == 0f)
+        {
+            StopCoroutine("DecreaseChargeCoroutine");
+        }
         
 
     }
@@ -94,25 +95,33 @@ public class ChargeBar : MonoBehaviour
                 break;
 
             case 11:
-                StartCoroutine("ChargeBarFlash");
+                StartFlash();
                 break;
         }
 
-
+         
+    }
+    IEnumerator DecreaseChargeCoroutine()
+    {
+        while (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            DecreaseCharge();
+            yield return null;
+        }
+        
+        //DecreaseCharge();
+        yield return null;
+    }
+    void StartFlash()
+    {
+        chargeBarAnimator.enabled = true;
+        chargeBarAnimator.SetBool("Flash", true);
     }
 
-    IEnumerator ChargeBarFlash()
+    void StopFlash()
     {
-        while (chargeBarAmount >= 11f)
-        {
-            gameObject.GetComponent<Image>().sprite = chargeBarSprites[11];
-            yield return new WaitForSeconds(1f);
-            gameObject.GetComponent<Image>().sprite = chargeBarSprites[12];
-            yield return new WaitForSeconds(1f);
-           
-        }
-        yield return new WaitForSeconds(1f);
-        //yield return null;
+        chargeBarAnimator.enabled = false;
+        chargeBarAnimator.SetBool("Flash", false);
     }
 }
 
