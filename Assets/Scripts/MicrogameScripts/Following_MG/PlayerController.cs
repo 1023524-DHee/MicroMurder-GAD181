@@ -7,10 +7,13 @@ public class PlayerController : MonoBehaviour
     private bool moving;
     private int currentDirection;
 
+    public static PlayerController current;
+
     public Animator animator;
 
     void Start()
     {
+        current = this;
         moving = false;
         currentDirection = 1;
     }
@@ -19,11 +22,16 @@ public class PlayerController : MonoBehaviour
     {
         if (moving)
         {
-            this.transform.Translate(new Vector2(Time.deltaTime * 2, 0));
+            transform.position += new Vector3(Time.deltaTime* 2, 0, 0);
+            //this.transform.Translate(new Vector2(Time.deltaTime * 2, 0));
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            MicrogameManager.current.LoadNextMicrogame();
+        }
+        
         animator.SetBool("Moving", moving);
-
     }
     
     public void Move(int direction)
@@ -40,4 +48,6 @@ public class PlayerController : MonoBehaviour
     {
         moving = false;
     }
+
+    //MicrogameManager.current.LoadNextMicrogame()
 }

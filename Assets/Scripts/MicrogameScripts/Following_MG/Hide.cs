@@ -4,35 +4,33 @@ using UnityEngine;
 
 public class Hide : MonoBehaviour
 {
-    public enum Axis { Y_AXIS }
+    private Vector3 originalPosition;
 
-    public Axis axis;
-    public float moveDistance;
-    public float moveSpeed;
-
-    // Update is called once per frame
-    void Update()
+    void MoveToHide(GameObject playerObject)
     {
-        Vector3 moveDirection = Vector3.zero;
-        switch (this.axis)
-        {
-            case Axis.Y_AXIS:
-                moveDirection = this.transform.up;
-                break;
-        }
-        this.transform.position += moveDirection * Time.deltaTime * this.moveDistance * Mathf.Sin(Time.time * this.moveSpeed);
+        playerObject.GetComponent<PlayerController>().Stop();
+        originalPosition = playerObject.transform.position;
+        playerObject.transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y + 1.5f, 0);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void MoveToPath(GameObject playerObject)
     {
-        if(other.gameObject.tag == "Player")
+        playerObject.transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y - 1.5f, 0);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.CompareTag("Player"))
         {
-            other.transform.parent = this.transform;
+            print("Hiding");
+            MoveToHide(col.gameObject);
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit2D(Collider2D other)
     {
+        MoveToPath(other.gameObject);
         other.transform.parent = null;
     }
 }
