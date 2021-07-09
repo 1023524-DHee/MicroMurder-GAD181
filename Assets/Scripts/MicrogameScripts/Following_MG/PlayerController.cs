@@ -22,14 +22,13 @@ public class PlayerController : MonoBehaviour
     {
         if (moving)
         {
-            transform.position += new Vector3(Time.deltaTime* 2, 0, 0);
-            //this.transform.Translate(new Vector2(Time.deltaTime * 2, 0));
+            transform.position += new Vector3(Time.deltaTime* 3, 0, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            MicrogameManager.current.LoadNextMicrogame();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    MicrogameManager.current.LoadNextMicrogame();
+        //}
         
         animator.SetBool("Moving", moving);
     }
@@ -48,6 +47,4 @@ public class PlayerController : MonoBehaviour
     {
         moving = false;
     }
-
-    //MicrogameManager.current.LoadNextMicrogame()
 }
