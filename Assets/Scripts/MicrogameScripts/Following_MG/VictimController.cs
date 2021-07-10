@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class VictimController : MonoBehaviour
 {
@@ -16,10 +17,12 @@ public class VictimController : MonoBehaviour
     private float delayStart;
     private bool delayed;
 
-    // should the platform move on its own
+    // should the victim move on its own
     public bool automatic;
 
     public Animator animator;
+
+    //public List<AudioClip> clips;
 
     void Start()
     {
@@ -27,6 +30,7 @@ public class VictimController : MonoBehaviour
         {
             currentTarget = points[0];
         }
+        
         tolerance = speed * Time.deltaTime;
     }
 
@@ -45,6 +49,19 @@ public class VictimController : MonoBehaviour
     void Update()
     {
         animator.SetBool("Delayed", delayed);
+
+        //if (!delayed)
+        //{
+        //    if (!AudioSource.isPlaying)
+        //    {
+        //        AudioSource.Play;
+        //    }
+        //}
+        //else
+        //{
+        //    AudioSource.Stop;
+        //    AudioSource.Clip = [1]
+        //}
     }
 
     // moves to the next position
@@ -52,6 +69,7 @@ public class VictimController : MonoBehaviour
     {
         Vector3 heading = currentTarget - transform.position;
         transform.position += (heading / heading.magnitude) * speed * Time.deltaTime;
+        
         if (heading.magnitude < tolerance)
         {
             transform.position = currentTarget;
