@@ -4,38 +4,30 @@ using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
-    Transform[] Position;
+    public Transform[] Position;
     public int ObjectSpeed;
-    public List<GameObject> positionPool;
-
+    
+    
     int NextPosIndex;
+
     Transform NextPos;
     // Start is called before the first frame update
     void Start()
     {
         NextPos = Position[0];
+        StartCoroutine(MoveGameObject_Gamecoroutine());
     }
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator MoveGameObject_Gamecoroutine()
     {
-        MoveGameObject();
-    }
-
-    void MoveGameObject()
-    {
-     
-        
-            NextPosIndex++;
-            if (NextPosIndex >= Position.Length)
-            {
-                NextPosIndex = 0;
-            }
-            NextPos = Position[NextPosIndex];
-            transform.position = Vector3.MoveTowards(transform.position, NextPos.position, ObjectSpeed * Time.deltaTime);
-        
-
+        NextPosIndex++;
+        if (NextPosIndex >= Position.Length)
+        {
+            NextPosIndex = 0;
+        }
+        NextPos = Position[NextPosIndex];
+        transform.position = Vector3.MoveTowards(transform.position, NextPos.position, ObjectSpeed * Time.deltaTime);
+        yield return new WaitForSeconds(3f);
+        StartCoroutine(MoveGameObject_Gamecoroutine());
 
     }
-    
 }

@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
 
     public void spawnObjects()
     {
-        destroyObjects();
+       
         GameObject toSpawn;
         MeshCollider c = boundingBox.GetComponent<MeshCollider>();
 
@@ -49,13 +49,7 @@ public class Spawner : MonoBehaviour
         }
 
     }
-    private void destroyObjects()
-    {
-        foreach(GameObject o in GameObject.FindGameObjectsWithTag("Spawnable"))
-        {
-            Destroy(o);
-        }
-    }
+    
 
 
 }

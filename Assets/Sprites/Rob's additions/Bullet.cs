@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name.Equals("Player") && !collision.name.Equals("Bullet(Clone)"))
+        if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
