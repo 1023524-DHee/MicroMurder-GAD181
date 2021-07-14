@@ -1,113 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
-public class VictimController : MonoBehaviour
+public class TEST : MonoBehaviour
 {
-    public Vector2[] points;
-    public int pointNumber = 0;
-    private Vector3 currentTarget;
+    [SerializeField]
+    public Transform[] waypoints;
 
-    public float tolerance;
-    public float speed; // how fast the victim moves
-    public float delayTimer; // how long the victim waits after stopping
+    [SerializeField]
+    float moveSpeed = 2f;
 
-    private float delayStart;
+    int waypointIndex = 0;
+    private bool shouldMove = true;
+
     private bool delayed;
-
-    // should the victim move on its own
-    public bool automatic;
-
     public Animator animator;
 
-    //public List<AudioClip> clips;
+    public AudioClip footsteps;
+    public AudioClip huh;
+    public AudioSource audio;
 
+
+    // Start is called before the first frame update
     void Start()
     {
-        if (points.Length > 0)
-        {
-            currentTarget = points[0];
-        }
-        
-        tolerance = speed * Time.deltaTime;
+        transform.position = waypoints[waypointIndex].transform.position;
+
+        audio = GetComponent<AudioSource>();
     }
 
-    void FixedUpdate()
-    {
-        if (transform.position != currentTarget)
-        {
-            MovePosition();
-        }
-        else
-        {
-            UpdateTarget();
-        }
-    }
-
+    // Update is called once per frame
     void Update()
     {
         animator.SetBool("Delayed", delayed);
 
-        //if (!delayed)
-        //{
-        //    if (!AudioSource.isPlaying)
-        //    {
-        //        AudioSource.Play;
-        //    }
-        //}
-        //else
-        //{
-        //    AudioSource.Stop;
-        //    AudioSource.Clip = [1]
-        //}
-    }
-
-    // moves to the next position
-    void MovePosition()
-    {
-        Vector3 heading = currentTarget - transform.position;
-        transform.position += (heading / heading.magnitude) * speed * Time.deltaTime;
-        
-        if (heading.magnitude < tolerance)
+        if (this.shouldMove)
         {
-            transform.position = currentTarget;
-            delayed = true;
-            delayStart = Time.time;
+            Move();
         }
     }
 
-    // automatically moves to next platform
-    void UpdateTarget()
+    void Move()
     {
-        if (automatic)
+        transform.position = Vector2.MoveTowards(transform.position,
+            waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+
+        if (transform.position == waypoints[waypointIndex].transform.position)
         {
-            if (Time.time - delayStart > delayTimer)
-            {
-                delayed = false;
-                NextPosition();
-            }
+            StartCoroutine(WaitAtPoint(3));
+            waypointIndex += 1;
+        }
+
+        if (waypointIndex == waypoints.Length)
+        {
+            waypointIndex = 1;
         }
     }
 
-    public void NextPosition()
+    IEnumerator WaitAtPoint(int seconds)
     {
-        pointNumber++;
-        if (pointNumber >= points.Length)
-        {
-            pointNumber = 0;
-        }
-        currentTarget = points[pointNumber];
-    }
+        this.shouldMove = false;
+        delayed = true;
+        //audio.Play(0);
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-
-        if (col.gameObject.CompareTag("Player"))
+        int counter = seconds;
+        while (counter > 0)
         {
-            print("Caught");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            yield return new WaitForSeconds(1);
+            counter--;
         }
+
+        this.shouldMove = true;
+        delayed = false;
+        audio.Play(0);
     }
 }
