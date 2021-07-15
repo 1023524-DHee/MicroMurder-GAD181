@@ -21,21 +21,21 @@ public class ChargeBar : MonoBehaviour
         {
             StartCoroutine("DecreaseChargeCoroutine");
         }
-            
+
         ChargeBarImageChange();
-        
+
         if (chargeBarAmount < 11f)
         {
             StopFlash();
         }
-        if(chargeBarAmount == 0f)
+        if (chargeBarAmount == 0f)
         {
             StopCoroutine("DecreaseChargeCoroutine");
         }
-        
+
 
     }
-
+    
     public void IncreaseCharge()
     {
         chargeBarAmount++;
@@ -44,7 +44,6 @@ public class ChargeBar : MonoBehaviour
     {
         chargeBarAmount--;
     }
-
 
     void ChargeBarImageChange()
     {
@@ -101,17 +100,23 @@ public class ChargeBar : MonoBehaviour
 
          
     }
+    
     IEnumerator DecreaseChargeCoroutine()
     {
-        while (Input.GetKeyUp(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            DecreaseCharge();
-            yield return null;
+            while (chargeBarAmount > 0) 
+            {
+                DecreaseCharge();
+                yield return null;
+            }
+           
         }
         
         //DecreaseCharge();
         yield return null;
     }
+    
     void StartFlash()
     {
         chargeBarAnimator.enabled = true;
