@@ -61,7 +61,7 @@ public class BPMTracker : MonoBehaviour
         while(Time.time < endTime)
         {
             circleSprite.transform.localScale = Vector3.Lerp(initCircleScale, new Vector3(0.5f,0.5f,0.5f), (Time.time-startTime)/currentBPM);
-            if (circleSprite.transform.localScale.x < 1.5f)
+            if (circleSprite.transform.localScale.x < 1.7f)
             {
                 canPress = true;
             }
@@ -106,6 +106,8 @@ public class BPMTracker : MonoBehaviour
     IEnumerator RandomChangeBPM()
     {
         yield return new WaitForSeconds(Random.Range(5f,10f));
+        interrogatorAnimation.SetTrigger("Trigger");
+        yield return new WaitForSeconds(interrogatorAnimation.GetCurrentAnimatorStateInfo(0).length);
         SetBPMValue(0.3f);
         StartCoroutine(RandomChangeBPM());
     }
