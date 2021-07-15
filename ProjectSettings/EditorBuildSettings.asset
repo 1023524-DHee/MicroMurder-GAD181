@@ -30,10 +30,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Murder Scenes/Bludgeoning_MG.unity
     guid: 8f4e277e30159de419484a76f0549f5b
   - enabled: 1
-    path: Assets/Scenes/Murder Scenes/ShootGun_MG.unity
+    path: Assets/Scenes/Murder Scenes/ShootSniper_MG.unity
     guid: 6335f0e27c5c18e4398550f3b65eff93
   - enabled: 1
-    path: Assets/Scenes/Murder Scenes/ShootSniper_MG.unity
+    path: Assets/Scenes/Murder Scenes/ShootGun_MG.unity
     guid: 9131cc10349fe6f468ea7cb8e07e70f7
   - enabled: 1
     path: Assets/Scenes/Murder Scenes/Stabbing_MG.unity
