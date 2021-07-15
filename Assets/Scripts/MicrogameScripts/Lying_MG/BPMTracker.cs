@@ -17,7 +17,7 @@ public class BPMTracker : MonoBehaviour
     public GameObject heartSprite;
     public GameObject circleSprite;
     public Image blackoutImage;
-
+    public Animator interrogatorAnimation;
 
     // Start is called before the first frame update
     void Start()
@@ -105,7 +105,7 @@ public class BPMTracker : MonoBehaviour
 
     IEnumerator RandomChangeBPM()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(Random.Range(5f,10f));
         SetBPMValue(0.3f);
         StartCoroutine(RandomChangeBPM());
     }

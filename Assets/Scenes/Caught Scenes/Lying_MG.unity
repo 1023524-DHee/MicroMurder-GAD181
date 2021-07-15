@@ -243,7 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86799869}
   - component: {fileID: 86799868}
-  - component: {fileID: 86799870}
+  - component: {fileID: 86799871}
   m_Layer: 0
   m_Name: Interrogator
   m_TagString: Untagged
@@ -291,7 +291,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4dcae90e2ad5e94ca5d654e30ade10b, type: 3}
+  m_Sprite: {fileID: -9104674051711531011, guid: c4c5b552030cd26428e2c6d093daa848, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -316,36 +316,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &86799870
-MonoBehaviour:
+--- !u!95 &86799871
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86799867}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faf52007347c4bd4ca72db8d1e353e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftClickDown:
-    m_PersistentCalls:
-      m_Calls: []
-  leftClickUp:
-    m_PersistentCalls:
-      m_Calls: []
-  leftClickDrag:
-    m_PersistentCalls:
-      m_Calls: []
-  rightClickDown:
-    m_PersistentCalls:
-      m_Calls: []
-  rightClickUp:
-    m_PersistentCalls:
-      m_Calls: []
-  rightClickDrag:
-    m_PersistentCalls:
-      m_Calls: []
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4429cee67c457745baabb14e6da395c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &156275385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1275,7 @@ MonoBehaviour:
   heartSprite: {fileID: 2126733837}
   circleSprite: {fileID: 1524054109}
   blackoutImage: {fileID: 829171993}
+  interrogatorAnimation: {fileID: 86799871}
 --- !u!82 &1562426829
 AudioSource:
   m_ObjectHideFlags: 0
