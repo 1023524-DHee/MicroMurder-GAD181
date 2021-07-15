@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    public new AudioSource audio;
+
+
     void Start()
     {
         current = this;
@@ -36,6 +39,7 @@ public class PlayerController : MonoBehaviour
     public void Move(int direction)
     {
         moving = true;
+        audio.Play(0);
 
         if(currentDirection < 0 && direction > 0)
         {
@@ -46,5 +50,6 @@ public class PlayerController : MonoBehaviour
     public void Stop()
     {
         moving = false;
+        audio.Stop();
     }
 }

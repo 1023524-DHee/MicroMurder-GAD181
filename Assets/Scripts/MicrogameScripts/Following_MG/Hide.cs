@@ -5,32 +5,52 @@ using UnityEngine;
 public class Hide : MonoBehaviour
 {
     private Vector3 originalPosition;
+    private bool isOnPath = false;
+    private bool inTriggerBox;
 
-    void MoveToHide(GameObject playerObject)
+    public void MoveToHide()
     {
-        playerObject.GetComponent<PlayerController>().Stop();
-        originalPosition = playerObject.transform.position;
-        playerObject.transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y + 1.5f, 0);
+        transform.GetComponent<PlayerController>().Stop();
+        originalPosition = transform.position;
+        transform.position = new Vector3(transform.position.x, -2.3f, 0);
+        isOnPath = false;
     }
 
-    void MoveToPath(GameObject playerObject)
+    public void MoveToPath()
     {
-        playerObject.transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y - 1.5f, 0);
+        transform.position = new Vector3(transform.position.x, -3.8f, 0);
+        isOnPath = true;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-
-        if (col.gameObject.CompareTag("Player"))
+        if(col.CompareTag("HideBoxes"))
         {
-            print("Hiding");
-            MoveToHide(col.gameObject);
+            inTriggerBox = true;
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D col)
     {
-        MoveToPath(other.gameObject);
-        other.transform.parent = null;
+        if (col.CompareTag("HideBoxes"))
+        {
+            inTriggerBox = false;
+        }
+    }
+
+    void OnMouseDown()
+    {
+        if(inTriggerBox && !isOnPath)
+        {
+            MoveToPath();
+        }
+    }
+
+    void OnMouseUp()
+    {
+        if (inTriggerBox && isOnPath)
+        {
+            MoveToHide();
+        }
     }
 }

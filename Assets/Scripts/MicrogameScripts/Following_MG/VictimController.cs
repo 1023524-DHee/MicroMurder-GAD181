@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
-public class TEST : MonoBehaviour
+public class VictimController : MonoBehaviour
 {
     [SerializeField]
     public Transform[] waypoints;
@@ -17,9 +17,8 @@ public class TEST : MonoBehaviour
     private bool delayed;
     public Animator animator;
 
-    public AudioClip footsteps;
-    public AudioClip huh;
-    public AudioSource audio;
+    public AudioClip footsteps, huh;
+    public new AudioSource audio;
 
 
     // Start is called before the first frame update
@@ -27,7 +26,7 @@ public class TEST : MonoBehaviour
     {
         transform.position = waypoints[waypointIndex].transform.position;
 
-        audio = GetComponent<AudioSource>();
+        //audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,13 +55,15 @@ public class TEST : MonoBehaviour
         {
             waypointIndex = 1;
         }
+
+        PlayAudio();
     }
 
     IEnumerator WaitAtPoint(int seconds)
     {
         this.shouldMove = false;
         delayed = true;
-        //audio.Play(0);
+        //PlayAudio();
 
         int counter = seconds;
         while (counter > 0)
@@ -73,6 +74,38 @@ public class TEST : MonoBehaviour
 
         this.shouldMove = true;
         delayed = false;
-        audio.Play(0);
+    }
+
+    void PlayAudio()
+    {
+        if (shouldMove)
+        {
+            if (!audio.isPlaying)
+            {
+                audio.clip = footsteps;
+                audio.Play(0);
+                print("walking");
+            }
+        }
+        else if (!shouldMove)
+        {
+            audio.clip = huh;
+            audio.Play(0);
+            print("huh");
+        }
+        else
+        {
+            audio.Stop();
+            print("stopped");
+        }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
