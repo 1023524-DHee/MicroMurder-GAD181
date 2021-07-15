@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 524df1a75227bc14e9ccb0d771b2f693
+guid: 3949780c8dfb97f4382f6de6e32a36f6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4329837141781996158
-    second: NewDeath_0
+      213: -3930631790497707582
+    second: VictimIdle_0
   - first:
-      213: 4194394522701562402
-    second: NewDeath_1
+      213: -4724233214579607994
+    second: VictimIdle_1
   - first:
-      213: -3459572203845122998
-    second: NewDeath_2
+      213: -8684374401399040015
+    second: VictimIdle_2
+  - first:
+      213: -82811089194501536
+    second: VictimIdle_3
+  - first:
+      213: -2535429336860551569
+    second: VictimIdle_4
+  - first:
+      213: 8304538433806110079
+    second: VictimIdle_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,18 +106,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -136,64 +133,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NewDeath_0
+      name: VictimIdle_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 4
-        width: 13
-        height: 21
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e726533a0fba61c30800000000000000
-      internalID: 4329837141781996158
+      spriteID: 2c9c68046379379c0800000000000000
+      internalID: -3930631790497707582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewDeath_1
+      name: VictimIdle_1
       rect:
         serializedVersion: 2
-        x: 30
-        y: 4
-        width: 9
-        height: 18
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2228875789b753a30800000000000000
-      internalID: 4194394522701562402
+      spriteID: 64671e0ebe6207eb0800000000000000
+      internalID: -4724233214579607994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewDeath_2
+      name: VictimIdle_2
       rect:
         serializedVersion: 2
-        x: 56
-        y: 1
-        width: 22
-        height: 9
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a440ff209612dffc0800000000000000
-      internalID: -3459572203845122998
+      spriteID: 1f75d146e77ea7780800000000000000
+      internalID: -8684374401399040015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VictimIdle_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a391dc0cbc9def0800000000000000
+      internalID: -82811089194501536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VictimIdle_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66925f837850dcd0800000000000000
+      internalID: -2535429336860551569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VictimIdle_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7d879ac4b5af3370800000000000000
+      internalID: 8304538433806110079
       vertices: []
       indices: 
       edges: []
