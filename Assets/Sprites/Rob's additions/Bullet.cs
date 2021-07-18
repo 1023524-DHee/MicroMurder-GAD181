@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
-
+    private GameObject PlayerGO;
     private Vector2 direction;
     private Vector3 mousePosition;
 
@@ -23,10 +23,11 @@ public class Bullet : MonoBehaviour
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if(Input.GetMouseButtonDown(0) && canFire)
+        if(Input.GetMouseButtonDown(0) && canFire && PlayerGO != null)
         {
-            print("killed");
+           
             // Call DestroyMyself function
+            DestroyMyself.current.DestroyFunction(PlayerGO);
         }
     }
 
@@ -35,6 +36,7 @@ public class Bullet : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             canFire = true;
+            PlayerGO = collision.gameObject;
         }
     }
 
@@ -43,6 +45,7 @@ public class Bullet : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             canFire = false;
+            PlayerGO = null;
         }
     }
 }
