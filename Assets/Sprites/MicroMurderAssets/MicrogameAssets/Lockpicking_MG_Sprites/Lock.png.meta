@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: 2a2ce577fa0ef8d428290f1cecd99e6d
+guid: f1557706d58689e459dd6e27c1ad9082
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9053420926129996538
-    second: Interrogator_Animation-sheet_0
+      213: -5620155193319629329
+    second: Lock_0
   - first:
-      213: 891182978431772722
-    second: Interrogator_Animation-sheet_1
+      213: 717643947602433640
+    second: Lock_1
   - first:
-      213: 5210261721310545552
-    second: Interrogator_Animation-sheet_2
+      213: -7901436235853946331
+    second: Lock_2
   - first:
-      213: -7419941832261476195
-    second: Interrogator_Animation-sheet_3
+      213: 3383569086138778819
+    second: Lock_3
   - first:
-      213: 3419281865760273575
-    second: Interrogator_Animation-sheet_4
-  - first:
-      213: -8883484492067980108
-    second: Interrogator_Animation-sheet_5
-  - first:
-      213: 5929904508401774227
-    second: Interrogator_Animation-sheet_6
+      213: 342379830741364218
+    second: Lock_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -67,7 +61,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -112,148 +106,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Interrogator_Animation-sheet_0
+      name: Lock_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 64
-        height: 32
+        y: 512
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af201108d5634ad70800000000000000
-      internalID: 9053420926129996538
+      spriteID: feddd97e0a23102b0800000000000000
+      internalID: -5620155193319629329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Interrogator_Animation-sheet_1
+      name: Lock_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 16
-        width: 64
-        height: 32
+        x: 0
+        y: 384
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 238ec4b723e1e5c00800000000000000
-      internalID: 891182978431772722
+      spriteID: 8665d0c3e5595f900800000000000000
+      internalID: 717643947602433640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Interrogator_Animation-sheet_2
+      name: Lock_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 16
-        width: 64
-        height: 32
+        x: 0
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 096c78d2e619e4840800000000000000
-      internalID: 5210261721310545552
+      spriteID: 522a68a6b95785290800000000000000
+      internalID: -7901436235853946331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Interrogator_Animation-sheet_3
+      name: Lock_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 16
-        width: 64
-        height: 32
+        x: 0
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d906ef15732170990800000000000000
-      internalID: -7419941832261476195
+      spriteID: 3c48b4c282ad4fe20800000000000000
+      internalID: 3383569086138778819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Interrogator_Animation-sheet_4
+      name: Lock_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 16
-        width: 64
-        height: 32
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a47393adbab37f20800000000000000
-      internalID: 3419281865760273575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Interrogator_Animation-sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 16
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4bcb892dbe587b480800000000000000
-      internalID: -8883484492067980108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Interrogator_Animation-sheet_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 16
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39e664f7bb04b4250800000000000000
-      internalID: 5929904508401774227
+      spriteID: afde89d54a060c400800000000000000
+      internalID: 342379830741364218
       vertices: []
       indices: 
       edges: []

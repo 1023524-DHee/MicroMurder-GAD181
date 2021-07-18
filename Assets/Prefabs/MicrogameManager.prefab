@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   premurderMicrogames:
   - FollowingSomeone_MG
-  - Disguise_MG
+  - Lockpicking_MG
   - Stalking_MG
   - LoadingGuns_MG
   meleeMurderMicrogames:

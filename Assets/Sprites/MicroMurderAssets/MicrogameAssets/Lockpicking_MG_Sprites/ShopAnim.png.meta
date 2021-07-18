@@ -1,28 +1,25 @@
 fileFormatVersion: 2
-guid: 2a2ce577fa0ef8d428290f1cecd99e6d
+guid: d440ee2861ef36840a27e72ba4066335
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9053420926129996538
-    second: Interrogator_Animation-sheet_0
+      213: -3286464246826784468
+    second: ShopAnim_0
   - first:
-      213: 891182978431772722
-    second: Interrogator_Animation-sheet_1
+      213: -7907539423022101147
+    second: ShopAnim_1
   - first:
-      213: 5210261721310545552
-    second: Interrogator_Animation-sheet_2
+      213: -1173613381611395429
+    second: ShopAnim_2
   - first:
-      213: -7419941832261476195
-    second: Interrogator_Animation-sheet_3
+      213: -6733323752606651792
+    second: ShopAnim_3
   - first:
-      213: 3419281865760273575
-    second: Interrogator_Animation-sheet_4
+      213: -3594985707013154017
+    second: ShopAnim_4
   - first:
-      213: -8883484492067980108
-    second: Interrogator_Animation-sheet_5
-  - first:
-      213: 5929904508401774227
-    second: Interrogator_Animation-sheet_6
+      213: 4541755241059864158
+    second: ShopAnim_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,148 +109,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Interrogator_Animation-sheet_0
+      name: ShopAnim_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 64
-        height: 32
+        y: 0
+        width: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af201108d5634ad70800000000000000
-      internalID: 9053420926129996538
+      spriteID: c292ed01e222462d0800000000000000
+      internalID: -3286464246826784468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Interrogator_Animation-sheet_1
+      name: ShopAnim_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 16
-        width: 64
-        height: 32
+        x: 48
+        y: 0
+        width: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 238ec4b723e1e5c00800000000000000
-      internalID: 891182978431772722
+      spriteID: 56dce5b6ac6c24290800000000000000
+      internalID: -7907539423022101147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Interrogator_Animation-sheet_2
+      name: ShopAnim_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 16
-        width: 64
-        height: 32
+        x: 96
+        y: 0
+        width: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 096c78d2e619e4840800000000000000
-      internalID: 5210261721310545552
+      spriteID: b966865f8dc76bfe0800000000000000
+      internalID: -1173613381611395429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Interrogator_Animation-sheet_3
+      name: ShopAnim_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a2e20c8bd6e82a0800000000000000
+      internalID: -6733323752606651792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShopAnim_4
       rect:
         serializedVersion: 2
         x: 192
-        y: 16
-        width: 64
-        height: 32
+        y: 0
+        width: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d906ef15732170990800000000000000
-      internalID: -7419941832261476195
+      spriteID: f1bdfd8eb8b0c1ec0800000000000000
+      internalID: -3594985707013154017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Interrogator_Animation-sheet_4
+      name: ShopAnim_5
       rect:
         serializedVersion: 2
-        x: 256
-        y: 16
-        width: 64
-        height: 32
+        x: 240
+        y: 0
+        width: 48
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a47393adbab37f20800000000000000
-      internalID: 3419281865760273575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Interrogator_Animation-sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 16
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4bcb892dbe587b480800000000000000
-      internalID: -8883484492067980108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Interrogator_Animation-sheet_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 16
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39e664f7bb04b4250800000000000000
-      internalID: 5929904508401774227
+      spriteID: e5e4428145e870f30800000000000000
+      internalID: 4541755241059864158
       vertices: []
       indices: 
       edges: []
