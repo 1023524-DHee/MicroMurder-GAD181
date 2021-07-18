@@ -7,7 +7,7 @@ public class MainMenuBehaviour : MonoBehaviour
 {
     public void StartGame()
     {
-        MicrogameManager.current.StartMicrogames();
+        MicrogameManager.current.LoadNextMicrogame();
     }
 
     public void QuitGame()

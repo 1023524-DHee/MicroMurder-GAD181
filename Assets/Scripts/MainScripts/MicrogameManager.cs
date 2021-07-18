@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public enum MicrogameState
 {
+	START,
 	DISCLAIMER,
 	PREMURDER,
 	MURDER,
@@ -18,66 +18,49 @@ public enum MicrogameState
 public class MicrogameManager : MonoBehaviour
 {
 	[SerializeField]
-	private string[] premurderMicrogames, meleeMurderMicrogames, gunMurderMicrogames, cleanupMicrogames, chaseMicrogames, caughtMicrogames, jailMicrogames;
+	private string[] premurderMicrogames, murderMicrogames, cleanupMicrogames, chaseMicrogames, caughtMicrogames, jailMicrogames;
 
 	[SerializeField]
 	private string startingMicrogame;
 
-	[SerializeField]
-	private List<string> triggerGunMicrogames = new List<string>();
-
-	//private static string currentMicrogameName;
-
 	public static MicrogameManager current;
-
-	private bool FirstMicrogame = true;
-	private bool gunMicrogame;
-	private MicrogameState currentState;
+	public MicrogameState currentState;
 
 	private void Awake()
 	{
 		current = this;
 	}
 
-	public void StartMicrogames()
-	{
-		// If Microgame loop hasn't started yet
-		if (startingMicrogame != null && FirstMicrogame)
-		{
-			SceneTransitionManager.current.LoadNextLevel(startingMicrogame);
-			FirstMicrogame = false;
-			currentState = MicrogameState.DISCLAIMER;
-			//currentMicrogameName = startingMicrogame;
-			
-		}
-	}
+	//public void StartMicrogames()
+	//{
+	//	// If Microgame loop hasn't started yet
+	//	if (startingMicrogame != null && FirstMicrogame)
+	//	{
+	//		SceneTransitionManager.current.LoadNextLevel(startingMicrogame);
+	//		FirstMicrogame = false;
+	//		currentState = MicrogameState.DISCLAIMER;
+	//	}
+	//}
 
 	public void LoadNextMicrogame()
 	{
 		string nextMicrogame = "";
 		switch (currentState)
 		{
+			// Starts Disclaimer Microgame
+			case MicrogameState.START:
+				currentState = MicrogameState.DISCLAIMER;
+				nextMicrogame = startingMicrogame;
+				break;
 			// Starts Pre-Murder Microgames
 			case MicrogameState.DISCLAIMER:
 				currentState = MicrogameState.PREMURDER;
 				nextMicrogame = RandomiseMicrogame(premurderMicrogames);
-				if (triggerGunMicrogames.Contains(nextMicrogame))
-				{
-					gunMicrogame = true;
-				}
 				break;
 			// Starts Murder Microgames
 			case MicrogameState.PREMURDER:
 				currentState = MicrogameState.MURDER;
-				switch (gunMicrogame)
-				{
-					case true:
-						nextMicrogame = RandomiseMicrogame(gunMurderMicrogames);
-						break;
-					case false:
-						nextMicrogame = RandomiseMicrogame(meleeMurderMicrogames);
-						break;
-				}
+				nextMicrogame = RandomiseMicrogame(murderMicrogames);
 				break;
 			// Starts Clean Up Microgames
 			case MicrogameState.MURDER:
@@ -112,14 +95,4 @@ public class MicrogameManager : MonoBehaviour
 	{
 		return microgameScenes[Random.Range(0,microgameScenes.Length)];
 	}
-
-	//public MicrogameState GetCurrentMicrogameState()
-	//{
-	//	return currentState;
-	//}
-
-	//public void SetCurrentMicrogameState(MicrogameState state_param)
-	//{
-	//	currentState = state_param;
-	//}
 }

@@ -39,5 +39,6 @@ public class LockParts : MonoBehaviour
     {
         GetComponent<AudioSource>().Play();
         lockAnimation.SetTrigger("Fade");
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
     }
 }
