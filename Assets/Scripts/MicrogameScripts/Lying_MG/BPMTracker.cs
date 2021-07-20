@@ -11,51 +11,39 @@ public class BPMTracker : MonoBehaviour
     private bool pressed = false;
     private float amountToChange;
 
-    public static BPMTracker current;
-
     public float currentBPM;
     public AudioClip soundClip;
     public AudioSource audioSource;
-    public GameObject gameObjectSprite;
     public GameObject indicatorCircleSprite;
 
     // Start is called before the first frame update
     void Start()
     {
-        current = this;
         audioSource.clip = soundClip;
-        Invoke("StartInitialCoroutines", 3f);
+        LyingGEM.current.onGameStart += ShrinkCircle_CoroutineStart;
+        LyingGEM.current.onInterrogatorSlam += SetBPMValue;
+        LyingGEM.current.onGameEnd += CleanUp;
     }
 
-	private void Update()
-	{
-        if (Input.GetMouseButtonDown(0))
+    public void ButtonPress()
+    {
+        pressed = true;
+        if (canPress)
         {
-            pressed = true;
-            if (canPress)
+            LyingGEM.current.HealthBarUpdate(false);
+            if (currentBPM < 1f)
             {
-                HealthBar.current.TakeDamage(false);
-                if (currentBPM < 1f)
-                {
-                    SetBPMValue(currentBPM + 0.1f);
-                }
-            }
-            else
-            {
-                HealthBar.current.TakeDamage(true);
-                if (currentBPM > 0.4f)
-                {
-                    SetBPMValue(currentBPM - 0.1f);
-                }
+                SetBPMValue(currentBPM + 0.1f);
             }
         }
-    }
-
-    private void StartInitialCoroutines()
-    {
-        StartCoroutine(ShrinkCircle());
-        StartCoroutine(Interrogator.current.InterrogatorSlam());
-        StartCoroutine(Timer.current.Timer_Coroutine());
+        else
+        {
+            LyingGEM.current.HealthBarUpdate(true);
+            if (currentBPM > 0.4f)
+            {
+                SetBPMValue(currentBPM - 0.1f);
+            }
+        }
     }
 
     // Handles BPM change at runtime
@@ -66,7 +54,7 @@ public class BPMTracker : MonoBehaviour
             currentBPM = amountToChange;
             BPMChanged = false;
         }
-        StartCoroutine(ShrinkCircle());
+        ShrinkCircle_CoroutineStart();
     }
 
     // Set the new BPM value
@@ -76,19 +64,16 @@ public class BPMTracker : MonoBehaviour
         amountToChange = newBPMValue;
     }
 
-    public void SetCircleActive(bool circleActive)
+    private void CleanUp()
     {
-        indicatorCircleSprite.SetActive(circleActive);
-    }
-
-    public void StopCoroutines()
-    {
+        indicatorCircleSprite.SetActive(false);
         StopAllCoroutines();
     }
 
     // Shrinks the timing circle
-    IEnumerator ShrinkCircle()
+    IEnumerator ShrinkCircle_Coroutine()
     {
+        bool audioPlayed = false;
         float startTime = Time.time;
         float endTime = startTime + currentBPM;
         Vector3 initCircleScale = indicatorCircleSprite.transform.localScale;
@@ -96,8 +81,13 @@ public class BPMTracker : MonoBehaviour
         while (Time.time < endTime)
         {
             indicatorCircleSprite.transform.localScale = Vector3.Lerp(initCircleScale, new Vector3(0.5f, 0.5f, 0.5f), (Time.time - startTime) / currentBPM);
-            if (indicatorCircleSprite.transform.localScale.x < 1.7f)
+            if (indicatorCircleSprite.transform.localScale.x < 1.5f)
             {
+                if (!audioPlayed)
+                {
+                    audioPlayed = true;
+                    audioSource.Play();
+                }
                 canPress = true;
             }
             yield return null;
@@ -105,11 +95,9 @@ public class BPMTracker : MonoBehaviour
 
         canPress = false;
         indicatorCircleSprite.transform.localScale = initCircleScale;
-        audioSource.Play();
-
         if (!pressed)
         {
-            HealthBar.current.TakeDamage(true);
+            LyingGEM.current.HealthBarUpdate(true);
             if (currentBPM > 0.4f)
             {
                 SetBPMValue(currentBPM - 0.1f);
@@ -118,5 +106,9 @@ public class BPMTracker : MonoBehaviour
 
         pressed = false;
         HandleBPMChange();
+    }
+    private void ShrinkCircle_CoroutineStart()
+    {
+        StartCoroutine(ShrinkCircle_Coroutine());
     }
 }

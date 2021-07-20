@@ -952,7 +952,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1562426828}
         m_TargetAssemblyTypeName: BPMTracker, Assembly-CSharp
-        m_MethodName: ClickDetected
+        m_MethodName: ButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1393,6 +1393,7 @@ GameObject:
   - component: {fileID: 1562426827}
   - component: {fileID: 1562426828}
   - component: {fileID: 1562426829}
+  - component: {fileID: 1562426830}
   m_Layer: 0
   m_Name: Lying_MG_Manager
   m_TagString: Untagged
@@ -1527,6 +1528,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1562426830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562426826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329b6580b1cc2ad4a9499ab715b93ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1808160703
 GameObject:
   m_ObjectHideFlags: 0

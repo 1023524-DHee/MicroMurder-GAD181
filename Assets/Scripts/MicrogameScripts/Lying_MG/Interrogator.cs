@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class Interrogator : MonoBehaviour
 {
-    public static Interrogator current;
-
     public Animator interrogatorAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        current = this;
+        LyingGEM.current.onGameStart += InterrogatorSlam_CoroutineStart;
     }
 
-    // Update is called once per frame
-    public IEnumerator InterrogatorSlam()
+    private void InterrogatorSlam_CoroutineStart()
+    {
+        StartCoroutine(InterrogatorSlam_Coroutine());
+    }
+
+    public IEnumerator InterrogatorSlam_Coroutine()
     {
         yield return new WaitForSeconds(Random.Range(5f, 10f));
         interrogatorAnimator.SetTrigger("Trigger");
         yield return new WaitForSeconds(interrogatorAnimator.GetCurrentAnimatorStateInfo(0).length);
-        BPMTracker.current.SetBPMValue(0.3f);
-        StartCoroutine(InterrogatorSlam());
+        LyingGEM.current.InterrogatorSlam(0.3f);
+        StartCoroutine(InterrogatorSlam_Coroutine());
     }
 }

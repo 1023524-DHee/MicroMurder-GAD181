@@ -44,42 +44,42 @@ public class MicrogameManager : MonoBehaviour
 
 	public void LoadNextMicrogame()
 	{
+		GameObject[] objs = GameObject.FindGameObjectsWithTag("FromLevelSelect");
+		if (objs.Length > 0)
+		{
+			SceneTransitionManager.current.LoadNextLevel("MainMenu");
+			return;
+		}
+
 		string nextMicrogame = "";
 		switch (currentState)
 		{
 			// Starts Disclaimer Microgame
 			case MicrogameState.START:
-				currentState = MicrogameState.DISCLAIMER;
 				nextMicrogame = startingMicrogame;
 				break;
 			// Starts Pre-Murder Microgames
 			case MicrogameState.DISCLAIMER:
-				currentState = MicrogameState.PREMURDER;
 				nextMicrogame = RandomiseMicrogame(premurderMicrogames);
 				break;
 			// Starts Murder Microgames
 			case MicrogameState.PREMURDER:
-				currentState = MicrogameState.MURDER;
 				nextMicrogame = RandomiseMicrogame(murderMicrogames);
 				break;
 			// Starts Clean Up Microgames
 			case MicrogameState.MURDER:
-				currentState = MicrogameState.CLEANUP;
 				nextMicrogame = RandomiseMicrogame(cleanupMicrogames);
 				break;
 			// Starts Chase Microgames
 			case MicrogameState.CLEANUP:
-				currentState = MicrogameState.CHASE;
 				nextMicrogame = RandomiseMicrogame(chaseMicrogames);
 				break;
 			// Starts Caught Microgames
 			case MicrogameState.CHASE:
-				currentState = MicrogameState.CAUGHT;
 				nextMicrogame = RandomiseMicrogame(caughtMicrogames);
 				break;
 			// Starts Jail Microgames
 			case MicrogameState.CAUGHT:
-				currentState = MicrogameState.JAIL;
 				nextMicrogame = RandomiseMicrogame(jailMicrogames);
 				break;
 			// Starts End Microgames
