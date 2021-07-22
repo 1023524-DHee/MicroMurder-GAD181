@@ -5,9 +5,18 @@ using UnityEngine.UI;
 
 public class MainMenuBehaviour : MonoBehaviour
 {
-    public void StartGame()
+	private void Awake()
+	{
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("FromLevelSelect");
+        for (int ii = 0; ii < objs.Length; ii++)
+        {
+            Destroy(objs[ii].gameObject);
+        }
+	}
+
+	public void StartGame()
     {
-        MicrogameManager.current.StartMicrogames();
+        MicrogameManager.current.LoadNextMicrogame();
     }
 
     public void QuitGame()

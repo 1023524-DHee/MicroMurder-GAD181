@@ -45,34 +45,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   premurderMicrogames:
   - FollowingSomeone_MG
-  - Disguise_MG
-  - Stalking_MG
-  - LoadingGuns_MG
-  meleeMurderMicrogames:
-  - Bludgeoning_MG
-  - Stabbing_MG
+  - Lockpicking_MG
+  murderMicrogames:
   - AxeMurder_MG
-  gunMurderMicrogames:
-  - ShootSniper_MG
   - ShootGun_MG
+  - ShootSniper_MG
   cleanupMicrogames:
-  - Digging_MG
-  - SawCutting_MG
   - AxeCutting_MG
   - BaggingCorpse_MG
-  - BurningClothes_MG
+  - CleaningWeapon_MG
   chaseMicrogames:
   - CarChase_MG
   - RunningSt_MG
-  - RunningRoof_MG
   caughtMicrogames:
   - Lying_MG
   - FightCop_MG
   - Trial_MG
   jailMicrogames:
-  - BreakOut_MG
   - LiftWeights_MG
   - FightInmates_MG
   startingMicrogame: Disclaimer_MG
-  triggerGunMicrogames:
-  - LoadingGuns_MG
