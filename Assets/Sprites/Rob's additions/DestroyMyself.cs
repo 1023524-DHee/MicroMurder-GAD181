@@ -9,7 +9,8 @@ public class DestroyMyself : MonoBehaviour
     public void DestroyFunction(GameObject objectToDestroy)
     {
         GetComponent<AudioSource>().Play();
-        objectToDestroy.SetActive(false);
+        GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
+        playerGO.SetActive(false);
         MicrogameManager.current.LoadNextMicrogame();
     }
 
