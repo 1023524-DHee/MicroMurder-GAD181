@@ -8,7 +8,7 @@ public class InmateBehaviour : MonoBehaviour
     private FightInmates_HealthBar healthBar;
     private SpriteRenderer spriteRenderer;
 
-    public float inmateTimeMin, inmateTimeMax;
+    public Sprite inmateSprite1, inmateSprite2, inmateSprite3;
     public float scale1, scale2;
     public float xPos1, yPos1, xPos2, yPos2;
 
@@ -18,6 +18,7 @@ public class InmateBehaviour : MonoBehaviour
         healthBar = GetComponent<FightInmates_HealthBar>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentInmateDepth = 0;
+        FightInmatesGEM.current.onGameEnd += GameEndedCleanup;
         ChangeInmate_CoroutineStart();
     }
 
@@ -28,7 +29,7 @@ public class InmateBehaviour : MonoBehaviour
 
 	IEnumerator ChangeInmate_Coroutine()
     {
-        yield return new WaitForSeconds(Random.Range(inmateTimeMin, inmateTimeMax));
+        yield return new WaitForSeconds(1f);
 
         switch (currentInmateDepth)
         {
@@ -41,6 +42,9 @@ public class InmateBehaviour : MonoBehaviour
                 currentInmateDepth++;
                 transform.position = new Vector2(xPos2, yPos2);
                 transform.localScale = new Vector2(scale2, scale2);
+                break;
+            case 2:
+                FightInmatesGEM.current.PlayerTakeDamage();
                 break;
         }
 
@@ -55,16 +59,25 @@ public class InmateBehaviour : MonoBehaviour
     {
         switch (healthBar.GetCurrentHealth())
         {
-            case 3:
-                spriteRenderer.color = Color.blue;
-                break;
             case 2:
-                spriteRenderer.color = Color.red;
+                spriteRenderer.sprite = inmateSprite1;
                 break;
             case 1:
-                spriteRenderer.color = Color.black;
+                spriteRenderer.sprite = inmateSprite2;
+                break;
+            case 0:
+                spriteRenderer.sprite = inmateSprite3;
                 break;
         }
     }
 
+    private void GameEndedCleanup()
+    {
+        StopAllCoroutines();
+    }
+
+	private void OnDestroy()
+	{
+        FightInmatesGEM.current.onGameEnd -= GameEndedCleanup;
+    }
 }

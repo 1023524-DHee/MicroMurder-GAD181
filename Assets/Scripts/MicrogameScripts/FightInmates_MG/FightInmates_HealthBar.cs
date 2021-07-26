@@ -11,6 +11,7 @@ public class FightInmates_HealthBar : MonoBehaviour
 	private void Start()
 	{
         currentHealth = maxHealth;
+        FightInmatesGEM.current.onGameEnd += GameEndedCleanup;
 	}
 
 	public int GetCurrentHealth()
@@ -23,7 +24,7 @@ public class FightInmates_HealthBar : MonoBehaviour
         currentHealth -= damageTaken;
         if (currentHealth <= 0)
         {
-            Dead();
+            Dead_CoroutineStart();
         }
     }
 
@@ -36,8 +37,24 @@ public class FightInmates_HealthBar : MonoBehaviour
         }
     }
 
-    private void Dead()
+    IEnumerator Dead_Coroutine()
     {
+        yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
+    }
+
+    private void Dead_CoroutineStart()
+    {
+        StartCoroutine(Dead_Coroutine());
+    }
+
+    private void GameEndedCleanup()
+    {
+        currentHealth = 99;
+    }
+
+	private void OnDestroy()
+	{
+        FightInmatesGEM.current.onGameEnd -= GameEndedCleanup;
     }
 }

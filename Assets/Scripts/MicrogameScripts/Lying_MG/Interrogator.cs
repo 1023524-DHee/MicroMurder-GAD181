@@ -22,7 +22,7 @@ public class Interrogator : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(5f, 10f));
         interrogatorAnimator.SetTrigger("Trigger");
         yield return new WaitForSeconds(interrogatorAnimator.GetCurrentAnimatorStateInfo(0).length);
-        LyingGEM.current.InterrogatorSlam(0.5f);
+        LyingGEM.current.InterrogatorSlam(0.4f);
         StartCoroutine(InterrogatorSlam_Coroutine());
     }
 }
