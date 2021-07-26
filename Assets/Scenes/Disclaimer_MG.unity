@@ -888,8 +888,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 1195846009}
-  textPickupClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
-  textPlacedClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
+  textPickupClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
+  textPlacedClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
   textPlacedFailClip: {fileID: 8300000, guid: 1c6eb04aaab8bf54ca8f965099247493, type: 3}
 --- !u!61 &1353187836
 BoxCollider2D:
@@ -1014,8 +1014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 384733801}
-  textPickupClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
-  textPlacedClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
+  textPickupClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
+  textPlacedClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
   textPlacedFailClip: {fileID: 8300000, guid: 1c6eb04aaab8bf54ca8f965099247493, type: 3}
 --- !u!61 &1439464443
 BoxCollider2D:
@@ -1140,8 +1140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 229309500}
-  textPickupClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
-  textPlacedClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
+  textPickupClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
+  textPlacedClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
   textPlacedFailClip: {fileID: 8300000, guid: 1c6eb04aaab8bf54ca8f965099247493, type: 3}
 --- !u!61 &1462346373
 BoxCollider2D:
@@ -1266,8 +1266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 1757512584}
-  textPickupClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
-  textPlacedClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
+  textPickupClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
+  textPlacedClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
   textPlacedFailClip: {fileID: 8300000, guid: 1c6eb04aaab8bf54ca8f965099247493, type: 3}
 --- !u!61 &1574839703
 BoxCollider2D:
@@ -2026,8 +2026,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 1765280630}
-  textPickupClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
-  textPlacedClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
+  textPickupClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
+  textPlacedClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
   textPlacedFailClip: {fileID: 8300000, guid: 1c6eb04aaab8bf54ca8f965099247493, type: 3}
 --- !u!61 &1964591766
 BoxCollider2D:
@@ -2152,8 +2152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 947214276}
-  textPickupClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
-  textPlacedClip: {fileID: 8300000, guid: f54ac995bd892294cbeb356b8816d5e8, type: 3}
+  textPickupClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
+  textPlacedClip: {fileID: 8300000, guid: 559c6489538505d4187fcb0e3e82532d, type: 3}
   textPlacedFailClip: {fileID: 8300000, guid: 1c6eb04aaab8bf54ca8f965099247493, type: 3}
 --- !u!61 &2078890022
 BoxCollider2D:
