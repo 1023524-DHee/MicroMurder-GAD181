@@ -78,6 +78,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Jail Scenes/FightInmates_MG.unity
     guid: 8e08a034fc5982846bf8ea7a202d7018
   - enabled: 1
-    path: Assets/Scenes/Jail Scenes/LiftWeight_MG.unity
+    path: Assets/Scenes/Jail Scenes/LiftWeights_MG.unity
     guid: dd35c68d1f2ba1b4892a6b6b68d907c0
   m_configObjects: {}

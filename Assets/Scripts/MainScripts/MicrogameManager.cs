@@ -21,7 +21,7 @@ public class MicrogameManager : MonoBehaviour
 	private string[] premurderMicrogames, murderMicrogames, cleanupMicrogames, chaseMicrogames, caughtMicrogames, jailMicrogames;
 
 	[SerializeField]
-	private string startingMicrogame;
+	private string mainMenuSceneName, startingMicrogame, endSceneName;
 
 	public static MicrogameManager current;
 	public MicrogameState currentState;
@@ -31,23 +31,20 @@ public class MicrogameManager : MonoBehaviour
 		current = this;
 	}
 
-	//public void StartMicrogames()
-	//{
-	//	// If Microgame loop hasn't started yet
-	//	if (startingMicrogame != null && FirstMicrogame)
-	//	{
-	//		SceneTransitionManager.current.LoadNextLevel(startingMicrogame);
-	//		FirstMicrogame = false;
-	//		currentState = MicrogameState.DISCLAIMER;
-	//	}
-	//}
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			LoadNextMicrogame();
+		}
+	}
 
 	public void LoadNextMicrogame()
 	{
 		GameObject[] objs = GameObject.FindGameObjectsWithTag("FromLevelSelect");
 		if (objs.Length > 0)
 		{
-			SceneTransitionManager.current.LoadNextLevel("MainMenu");
+			SceneTransitionManager.current.LoadNextLevel(mainMenuSceneName);
 			return;
 		}
 
@@ -84,7 +81,11 @@ public class MicrogameManager : MonoBehaviour
 				break;
 			// Starts End Microgames
 			case MicrogameState.JAIL:
-				currentState = MicrogameState.END;
+				nextMicrogame = endSceneName;
+				break;
+			// Goes back to Main Menu screen
+			case MicrogameState.END:
+				nextMicrogame = mainMenuSceneName;
 				break;
 		}
 		SceneTransitionManager.current.LoadNextLevel(nextMicrogame);
