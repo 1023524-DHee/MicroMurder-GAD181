@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class Obstacles : MonoBehaviour
 {
     public float speed = 1f;
-    
+    public AudioSource audioSource;
+
     void Start()
     {
         StartCoroutine(DestroyObject_Coroutine());
+        audioSource = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -20,14 +22,24 @@ public class Obstacles : MonoBehaviour
     IEnumerator DestroyObject_Coroutine()
     {
         yield return new WaitForSeconds(6f);
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 1);
+    }
+
+    IEnumerator TriggerActions(Collider2D col)
+    {
+        audioSource.Play();
+        //Destroy(col.gameObject);
+        yield return new WaitForSeconds(2f);
+
+        if (col.gameObject.tag == "Player")
+        {
+            Debug.Log("Hit!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        StartCoroutine(TriggerActions(col));
     }
 }
