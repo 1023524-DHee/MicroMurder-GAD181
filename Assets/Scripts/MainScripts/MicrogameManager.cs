@@ -21,7 +21,7 @@ public class MicrogameManager : MonoBehaviour
 	private string[] premurderMicrogames, murderMicrogames, cleanupMicrogames, chaseMicrogames, caughtMicrogames, jailMicrogames;
 
 	[SerializeField]
-	private string startingMicrogame;
+	private string mainMenuSceneName, startingMicrogame, endSceneName;
 
 	public static MicrogameManager current;
 	public MicrogameState currentState;
@@ -31,23 +31,20 @@ public class MicrogameManager : MonoBehaviour
 		current = this;
 	}
 
-	//public void StartMicrogames()
-	//{
-	//	// If Microgame loop hasn't started yet
-	//	if (startingMicrogame != null && FirstMicrogame)
-	//	{
-	//		SceneTransitionManager.current.LoadNextLevel(startingMicrogame);
-	//		FirstMicrogame = false;
-	//		currentState = MicrogameState.DISCLAIMER;
-	//	}
-	//}
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			LoadNextMicrogame();
+		}
+	}
 
 	public void LoadNextMicrogame()
 	{
 		GameObject[] objs = GameObject.FindGameObjectsWithTag("FromLevelSelect");
 		if (objs.Length > 0)
 		{
-			SceneTransitionManager.current.LoadNextLevel("MainMenu");
+			SceneTransitionManager.current.LoadNextLevel(mainMenuSceneName);
 			return;
 		}
 
@@ -64,31 +61,87 @@ public class MicrogameManager : MonoBehaviour
 				break;
 			// Starts Murder Microgames
 			case MicrogameState.PREMURDER:
-				nextMicrogame = RandomiseMicrogame(murderMicrogames);
+				nextMicrogame = "ShootSniper_MG";
 				break;
-			// Starts Clean Up Microgames
-			case MicrogameState.MURDER:
-				nextMicrogame = RandomiseMicrogame(cleanupMicrogames);
-				break;
+			//// Starts Clean Up Microgames
+			//case MicrogameState.MURDER:
+			//	nextMicrogame = RandomiseMicrogame(cleanupMicrogames);
+			//	break;
 			// Starts Chase Microgames
-			case MicrogameState.CLEANUP:
-				nextMicrogame = RandomiseMicrogame(chaseMicrogames);
+			case MicrogameState.MURDER:
+				nextMicrogame = "CarChase_MG";
 				break;
 			// Starts Caught Microgames
 			case MicrogameState.CHASE:
-				nextMicrogame = RandomiseMicrogame(caughtMicrogames);
+				nextMicrogame = "Lying_MG";
 				break;
 			// Starts Jail Microgames
 			case MicrogameState.CAUGHT:
-				nextMicrogame = RandomiseMicrogame(jailMicrogames);
+				nextMicrogame = "FightInmates_MG";
 				break;
 			// Starts End Microgames
 			case MicrogameState.JAIL:
-				currentState = MicrogameState.END;
+				nextMicrogame = endSceneName;
+				break;
+			// Goes back to Main Menu screen
+			case MicrogameState.END:
+				nextMicrogame = mainMenuSceneName;
 				break;
 		}
 		SceneTransitionManager.current.LoadNextLevel(nextMicrogame);
 	}
+
+	//public void LoadNextMicrogame()
+	//{
+	//	GameObject[] objs = GameObject.FindGameObjectsWithTag("FromLevelSelect");
+	//	if (objs.Length > 0)
+	//	{
+	//		SceneTransitionManager.current.LoadNextLevel(mainMenuSceneName);
+	//		return;
+	//	}
+
+	//	string nextMicrogame = "";
+	//	switch (currentState)
+	//	{
+	//		// Starts Disclaimer Microgame
+	//		case MicrogameState.START:
+	//			nextMicrogame = startingMicrogame;
+	//			break;
+	//		// Starts Pre-Murder Microgames
+	//		case MicrogameState.DISCLAIMER:
+	//			nextMicrogame = RandomiseMicrogame(premurderMicrogames);
+	//			break;
+	//		// Starts Murder Microgames
+	//		case MicrogameState.PREMURDER:
+	//			nextMicrogame = RandomiseMicrogame(murderMicrogames);
+	//			break;
+	//		// Starts Clean Up Microgames
+	//		case MicrogameState.MURDER:
+	//			nextMicrogame = RandomiseMicrogame(cleanupMicrogames);
+	//			break;
+	//		// Starts Chase Microgames
+	//		case MicrogameState.CLEANUP:
+	//			nextMicrogame = RandomiseMicrogame(chaseMicrogames);
+	//			break;
+	//		// Starts Caught Microgames
+	//		case MicrogameState.CHASE:
+	//			nextMicrogame = RandomiseMicrogame(caughtMicrogames);
+	//			break;
+	//		// Starts Jail Microgames
+	//		case MicrogameState.CAUGHT:
+	//			nextMicrogame = RandomiseMicrogame(jailMicrogames);
+	//			break;
+	//		// Starts End Microgames
+	//		case MicrogameState.JAIL:
+	//			nextMicrogame = endSceneName;
+	//			break;
+	//		// Goes back to Main Menu screen
+	//		case MicrogameState.END:
+	//			nextMicrogame = mainMenuSceneName;
+	//			break;
+	//	}
+	//	SceneTransitionManager.current.LoadNextLevel(nextMicrogame);
+	//}
 
 	// Chooses a random scene from a list of scenes
 	private string RandomiseMicrogame(string[] microgameScenes)

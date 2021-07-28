@@ -19,10 +19,10 @@ public class Interrogator : MonoBehaviour
 
     public IEnumerator InterrogatorSlam_Coroutine()
     {
-        yield return new WaitForSeconds(Random.Range(5f, 10f));
+        yield return new WaitForSeconds(Random.Range(4f, 7f));
         interrogatorAnimator.SetTrigger("Trigger");
         yield return new WaitForSeconds(interrogatorAnimator.GetCurrentAnimatorStateInfo(0).length);
-        LyingGEM.current.InterrogatorSlam(0.3f);
+        LyingGEM.current.InterrogatorSlam(0.4f);
         StartCoroutine(InterrogatorSlam_Coroutine());
     }
 }

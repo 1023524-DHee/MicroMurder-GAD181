@@ -64,4 +64,7 @@ MonoBehaviour:
   jailMicrogames:
   - LiftWeights_MG
   - FightInmates_MG
+  mainMenuSceneName: MainMenu
   startingMicrogame: Disclaimer_MG
+  endSceneName: EndScene
+  currentState: 8
