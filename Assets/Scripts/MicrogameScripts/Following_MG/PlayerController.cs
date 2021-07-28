@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
         current = this;
         moving = false;
         currentDirection = 1;
+        Invoke("EnableBoxCollider", 4f);
     }
 
     void Update()
@@ -36,6 +37,11 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Moving", moving);
     }
     
+    void EnableBoxCollider()
+    {
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
     public void Move(int direction)
     {
         moving = true;
