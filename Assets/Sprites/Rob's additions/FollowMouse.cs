@@ -12,7 +12,7 @@ public class FollowMouse : MonoBehaviour
 
     void Awake()
     {
-        Cursor.visible = false;
+        Cursor.visible = false;  // takes away cursor on play
     }
 
 
@@ -37,14 +37,14 @@ public class FollowMouse : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Cursor.visible = true;
+            Cursor.visible = true;  // displays cursor
         }
     }
 
     void MoveMouseWithBounds()
     {
-        cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector2(Mathf.Clamp(cursorPos.x, xMin, xMax), Mathf.Clamp(cursorPos.y, yMin, yMax));
+        cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // camera follows mouse position
+        transform.position = new Vector2(Mathf.Clamp(cursorPos.x, xMin, xMax), Mathf.Clamp(cursorPos.y, yMin, yMax)); // sets boundries for mouse
     }
 }
 
