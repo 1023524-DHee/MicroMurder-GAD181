@@ -22,6 +22,11 @@ public class ChargeBar : MonoBehaviour
             StartCoroutine("DecreaseChargeCoroutine");
         }
 
+        if(Input.GetMouseButton(0))
+        {
+            IncreaseCharge();
+        }
+
         ChargeBarImageChange();
 
         if (chargeBarAmount < 11f)
@@ -38,7 +43,7 @@ public class ChargeBar : MonoBehaviour
     
     public void IncreaseCharge()
     {
-        chargeBarAmount++;
+        if(chargeBarAmount < 12f) chargeBarAmount++;
     }
     public void DecreaseCharge()
     {
