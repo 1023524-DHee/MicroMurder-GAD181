@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    public static HealthBar current;
-
     private float topLimitPosition, bottomLimitPosition;
 
     public Transform topLimit, bottomLimit;
@@ -14,18 +12,11 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        current = this;
         topLimitPosition = topLimit.position.y;
         bottomLimitPosition = bottomLimit.position.y;
         healthBarPointer.position = new Vector3(healthBarPointer.position.x, ((topLimitPosition - bottomLimitPosition) / 2) + bottomLimitPosition);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if (Input.GetKey(KeyCode.UpArrow)) TakeDamage(false);
-
-        //if (Input.GetKey(KeyCode.DownArrow)) TakeDamage(true);
+        LyingGEM.current.onHealthBarUpdate += TakeDamage;
     }
 
     public void TakeDamage(bool damageTaken)

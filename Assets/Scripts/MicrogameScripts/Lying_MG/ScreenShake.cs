@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ScreenShake : MonoBehaviour
 {
-    // Transform of the GameObject you want to shake
-    private Transform transform;
-
     // Desired duration of the shake effect
     private float shakeDuration = 0f;
 
@@ -18,14 +15,6 @@ public class ScreenShake : MonoBehaviour
 
     // The initial position of the GameObject
     Vector3 initialPosition;
-
-    void Awake()
-    {
-        if (transform == null)
-        {
-            transform = GetComponent(typeof(Transform)) as Transform;
-        }
-    }
 
     void OnEnable()
     {

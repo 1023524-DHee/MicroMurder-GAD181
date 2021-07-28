@@ -9,80 +9,41 @@ public class BPMTracker : MonoBehaviour
     private bool canPress = false;
     private bool BPMChanged = false;
     private bool pressed = false;
+    private float amountToChange;
 
-    public AudioClip heartbeatClip;
-    public AudioSource audioSource;
     public float currentBPM;
-    public float amountToChange;
-    public GameObject heartSprite;
-    public GameObject circleSprite;
-    public Image blackoutImage;
-    public Animator interrogatorAnimation;
+    public AudioClip soundClip;
+    public AudioSource audioSource;
+    public GameObject indicatorCircleSprite;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(ShrinkCircle());
-        StartCoroutine(RandomChangeBPM());
-        audioSource.clip = heartbeatClip;
+        audioSource.clip = soundClip;
+        LyingGEM.current.onGameStart += ShrinkCircle_CoroutineStart;
+        LyingGEM.current.onInterrogatorSlam += SetBPMValue;
+        LyingGEM.current.onGameEnd += CleanUp;
     }
 
-	private void Update()
-	{
-        if (Input.GetMouseButtonDown(0))
-        {
-            pressed = true;
-            if (canPress)
-            {
-                HealthBar.current.TakeDamage(false);
-                if (currentBPM < 1f)
-                {
-                    SetBPMValue(currentBPM + 0.1f);
-                }
-            }
-            else
-            {
-                HealthBar.current.TakeDamage(true);
-                if (currentBPM > 0.4f)
-                {
-                    SetBPMValue(currentBPM - 0.1f);
-                }
-            }
-        }
-    }
-
-    // Shrinks the timing circle
-    IEnumerator ShrinkCircle()
+    public void ButtonPress()
     {
-        float startTime = Time.time;
-        float endTime = startTime + currentBPM;
-        Vector3 initCircleScale = circleSprite.transform.localScale;
-
-        while(Time.time < endTime)
+        pressed = true;
+        if (canPress)
         {
-            circleSprite.transform.localScale = Vector3.Lerp(initCircleScale, new Vector3(0.5f,0.5f,0.5f), (Time.time-startTime)/currentBPM);
-            if (circleSprite.transform.localScale.x < 1.7f)
+            LyingGEM.current.HealthBarUpdate(false);
+            if (currentBPM < 1f)
             {
-                canPress = true;
+                SetBPMValue(currentBPM + 0.1f);
             }
-            yield return null;
         }
-
-        canPress = false;
-        circleSprite.transform.localScale = initCircleScale;
-        audioSource.Play();
-
-        if (!pressed)
+        else
         {
-            HealthBar.current.TakeDamage(true);
+            LyingGEM.current.HealthBarUpdate(true);
             if (currentBPM > 0.4f)
             {
                 SetBPMValue(currentBPM - 0.1f);
             }
         }
-
-        pressed = false;
-        HandleBPMChange();
     }
 
     // Handles BPM change at runtime
@@ -93,7 +54,7 @@ public class BPMTracker : MonoBehaviour
             currentBPM = amountToChange;
             BPMChanged = false;
         }
-        StartCoroutine(ShrinkCircle());
+        ShrinkCircle_CoroutineStart();
     }
 
     // Set the new BPM value
@@ -103,12 +64,51 @@ public class BPMTracker : MonoBehaviour
         amountToChange = newBPMValue;
     }
 
-    IEnumerator RandomChangeBPM()
+    private void CleanUp()
     {
-        yield return new WaitForSeconds(Random.Range(5f,10f));
-        interrogatorAnimation.SetTrigger("Trigger");
-        yield return new WaitForSeconds(interrogatorAnimation.GetCurrentAnimatorStateInfo(0).length);
-        SetBPMValue(0.3f);
-        StartCoroutine(RandomChangeBPM());
+        indicatorCircleSprite.SetActive(false);
+        StopAllCoroutines();
+    }
+
+    // Shrinks the timing circle
+    IEnumerator ShrinkCircle_Coroutine()
+    {
+        bool audioPlayed = false;
+        float startTime = Time.time;
+        float endTime = startTime + currentBPM;
+        Vector3 initCircleScale = indicatorCircleSprite.transform.localScale;
+
+        while (Time.time < endTime)
+        {
+            indicatorCircleSprite.transform.localScale = Vector3.Lerp(initCircleScale, new Vector3(0.5f, 0.5f, 0.5f), (Time.time - startTime) / currentBPM);
+            if (indicatorCircleSprite.transform.localScale.x < 1.5f)
+            {
+                if (!audioPlayed)
+                {
+                    audioPlayed = true;
+                    audioSource.Play();
+                }
+                canPress = true;
+            }
+            yield return null;
+        }
+
+        canPress = false;
+        indicatorCircleSprite.transform.localScale = initCircleScale;
+        if (!pressed)
+        {
+            LyingGEM.current.HealthBarUpdate(true);
+            if (currentBPM > 0.4f)
+            {
+                SetBPMValue(currentBPM - 0.1f);
+            }
+        }
+
+        pressed = false;
+        HandleBPMChange();
+    }
+    private void ShrinkCircle_CoroutineStart()
+    {
+        StartCoroutine(ShrinkCircle_Coroutine());
     }
 }
