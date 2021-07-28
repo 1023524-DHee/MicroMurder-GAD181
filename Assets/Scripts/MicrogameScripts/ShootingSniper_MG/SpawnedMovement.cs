@@ -19,17 +19,17 @@ public class SpawnedMovement : MonoBehaviour
         if (movePosition == null) return;
 
         Vector3 dir = (movePosition.transform.position - transform.position).normalized;
-        rigidbody.MovePosition(transform.position + dir * 200f * Time.fixedDeltaTime);
+        rigidbody.MovePosition(transform.position + dir * 200f * Time.fixedDeltaTime);  // wait a certain amount of time before moving to new point
 
     }
 
     public void ChangeWaypoint(Transform newWaypoint)
     {
-        movePosition = newWaypoint;
+        movePosition = newWaypoint;  // Move to new waypoint
     }
 
     public void ChangeSpeed(float newSpeed)
     {
-        moveSpeed = newSpeed;
+        moveSpeed = newSpeed; // change speed
     }
 }
