@@ -1208,6 +1208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerAnimator: {fileID: 1001449240}
+  currentSceneName: 0
 --- !u!1 &1059559890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,7 +1431,6 @@ MonoBehaviour:
   currentBPM: 1
   soundClip: {fileID: 8300000, guid: 09cd7be94c6811a41bdb7cb0e7c61f7d, type: 3}
   audioSource: {fileID: 905118184}
-  gameObjectSprite: {fileID: 2126733837}
   indicatorCircleSprite: {fileID: 1524054109}
 --- !u!82 &1562426829
 AudioSource:
