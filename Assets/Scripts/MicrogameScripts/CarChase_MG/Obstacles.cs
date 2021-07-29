@@ -22,24 +22,14 @@ public class Obstacles : MonoBehaviour
     IEnumerator DestroyObject_Coroutine()
     {
         yield return new WaitForSeconds(6f);
-        Destroy(this.gameObject, 1);
+        Destroy(this.gameObject);
     }
 
-    IEnumerator TriggerActions(Collider2D col)
-    {
-        audioSource.Play();
-        //Destroy(col.gameObject);
-        yield return new WaitForSeconds(2f);
-
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.Log("Hit!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        StartCoroutine(TriggerActions(col));
-    }
+    //void OnTriggerEnter2D(Collider2D col)
+    //{
+    //    if (col.gameObject.tag == "Player")
+    //    {
+    //        audioSource.Play();
+    //    }
+    //}
 }

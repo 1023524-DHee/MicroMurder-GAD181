@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Driving : MonoBehaviour
 {
     public bool hasBounds;
     public float xMin, xMax, yMin, yMax;
     public float speed = 1f;
+
+    public AudioClip crashSound;
 
     private Vector2 cursorPos;
 
@@ -15,36 +18,31 @@ public class Driving : MonoBehaviour
         Cursor.visible = false;
     }
 
-
     void Update()
-    {
-        if (hasBounds)
-        {
-            MoveMouseWithBounds();
-        }
-        else
-        {
-            MoveMouseNoBounds();
-        }
-
-
-    }
-
-    void MoveMouseNoBounds()
-    {
-        cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector2(cursorPos.x, cursorPos.y);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Cursor.visible = true;
-        }
-    }
-
-    void MoveMouseWithBounds()
     {
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = Vector2.Lerp(transform.position, new Vector2(Mathf.Clamp(cursorPos.x, xMin, xMax), Mathf.Clamp(cursorPos.y, yMin, yMax)), speed);
+    }
+
+    IEnumerator TriggerActions()
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
+        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(2f);
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Obstacles"))
+        {
+            AudioSource.PlayClipAtPoint(crashSound, transform.position);
+
+            Debug.Log("Oops!");
+            StartCoroutine(TriggerActions());
+        }
+        
     }
 }
 

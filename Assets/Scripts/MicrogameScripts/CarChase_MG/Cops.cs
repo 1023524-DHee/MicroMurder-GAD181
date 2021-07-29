@@ -22,23 +22,14 @@ public class Cops : MonoBehaviour
     IEnumerator DestroyCop_Coroutine()
     {
         yield return new WaitForSeconds(4f);
-        Destroy(this.gameObject, 1f);
+        Destroy(this.gameObject);
     }
 
-    IEnumerator TriggerActions(Collider2D col)
-    {
-        audioSource.Play();
-        yield return new WaitForSeconds(2f);
-        Destroy(col.gameObject);
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.Log("Hit!"); 
-            StartCoroutine(TriggerActions(col));
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
+    //void OnTriggerEnter2D(Collider2D col)
+    //{
+    //    if (col.gameObject.tag == "Player")
+    //    {
+    //        audioSource.Play();
+    //    }
+    //}
 }

@@ -24,18 +24,18 @@ public class RoadBlock : MonoBehaviour
 
     IEnumerator TriggerActions(Collider2D col)
     {
-        audioSource.Play();
+        //audioSource.Play();
+        yield return new WaitForSeconds(1f);
         //Destroy(col.gameObject);
-        yield return new WaitForSeconds(2f);
 
         if (col.gameObject.CompareTag("Player"))
         {
             Cursor.visible = true;
-            MicrogameManager.current.LoadNextMicrogame();
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //MicrogameManager.current.LoadNextMicrogame();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D col)
