@@ -25,7 +25,6 @@ public class FistBehaviour : MonoBehaviour
             {
                 playerClicked = false;
                 succeedClick = true;
-                print("Succeed");
                 FightCopGEM.current.PunchClickedSuccess();
                 Destroy(gameObject);
             }

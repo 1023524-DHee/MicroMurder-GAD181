@@ -47,8 +47,9 @@ MonoBehaviour:
   premurderMicrogames:
   - FollowingSomeone_MG
   - Lockpicking_MG
+  - BoxLockpick_MG
   murderMicrogames:
-  - AxeMurder_MG
+  - FightVictim_MG
   - ShootGun_MG
   - ShootSniper_MG
   cleanupMicrogames:
@@ -68,7 +69,7 @@ MonoBehaviour:
   mainMenuSceneName: MainMenu
   startingMicrogame: Disclaimer_MG
   endSceneName: EndScene
-  currentState: 6
+  currentState: 3
 --- !u!114 &6451883450175832031
 MonoBehaviour:
   m_ObjectHideFlags: 0

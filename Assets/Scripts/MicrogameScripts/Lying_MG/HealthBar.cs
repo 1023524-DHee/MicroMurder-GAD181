@@ -15,20 +15,6 @@ public class HealthBar : MonoBehaviour
         LyingGEM.current.onGameEnd += GameEndCleanup;
     }
 
-    //public void TakeDamage(bool damageTaken)
-    //{
-    //    float currentPointerYPosition = healthBarPointer.position.y;
-    //    float damageAmount = 10f;
-
-    //    if (damageTaken)
-    //    {
-    //        damageAmount *= -1;
-    //        Camera.main.GetComponent<ScreenShake>().TriggerShake();
-    //    }
-
-    //    healthBarPointer.position = new Vector3(healthBarPointer.position.x, Mathf.Clamp(currentPointerYPosition + damageAmount, bottomLimitPosition, topLimitPosition));
-    //}
-
     public void TakeDamage(bool damageTaken)
     {
         if (damageTaken)

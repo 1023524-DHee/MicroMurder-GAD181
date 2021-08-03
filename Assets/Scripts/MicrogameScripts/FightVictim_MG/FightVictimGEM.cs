@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FightCopGEM : MonoBehaviour
+public class FightVictimGEM : MonoBehaviour
 {
 	private int punchesDefended;
 	[SerializeField]
-	private int punchesDefendedThreshold;
+	private int punchesDefendedThreshold, punchIncrement, maximumPunchThreshold;
 
-	public static FightCopGEM current;
+	public static FightVictimGEM current;
 
 	// Start is called before the first frame update
 	void Awake()
@@ -37,21 +37,21 @@ public class FightCopGEM : MonoBehaviour
 		if (punchesDefended >= punchesDefendedThreshold)
 		{
 			punchesDefended = 0;
-			punchesDefendedThreshold = Mathf.Clamp(punchesDefendedThreshold + 2, 0, 9);
-			CopVulnerable();
+			punchesDefendedThreshold = Mathf.Clamp(punchesDefendedThreshold + punchIncrement, 0, maximumPunchThreshold);
+			VictimVulnerable();
 		}
 	}
 
-	public event Action onCopResumeCombat;
-	public void CopResumeCombat()
+	public event Action onVictimResumeCombat;
+	public void VictimResumeCombat()
 	{
-		if (onCopResumeCombat != null) onCopResumeCombat();
+		if (onVictimResumeCombat != null) onVictimResumeCombat();
 	}
 
-	public event Action onCopVulnerable;
-	public void CopVulnerable()
+	public event Action onVictimVulnerable;
+	public void VictimVulnerable()
 	{
-		if (onCopVulnerable != null) onCopVulnerable();
+		if (onVictimVulnerable != null) onVictimVulnerable();
 	}
 
 	public event Action onGameEnd;

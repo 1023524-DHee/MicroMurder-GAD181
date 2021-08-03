@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PunchSpawner : MonoBehaviour
+public class PunchSpawner_FightVictim : MonoBehaviour
 {
     private int currentPunchPosition;
 
@@ -13,11 +13,10 @@ public class PunchSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //FightCopGEM.current.onPunchClickedSuccess += PunchDefended;
-        FightCopGEM.current.onGameStart += ChooseRandomPosition_CoroutineStart;
-        FightCopGEM.current.onCopVulnerable += StopSpawning;
-        FightCopGEM.current.onCopResumeCombat += ChooseRandomPosition_CoroutineStart;
-        FightCopGEM.current.onGameEnd += StopSpawning;
+        FightVictimGEM.current.onGameStart += ChooseRandomPosition_CoroutineStart;
+        FightVictimGEM.current.onVictimVulnerable += StopSpawning;
+        FightVictimGEM.current.onVictimResumeCombat += ChooseRandomPosition_CoroutineStart;
+        FightVictimGEM.current.onGameEnd += StopSpawning;
 
         currentPunchPosition = Random.Range(0, punchPositions.Count);
     }
