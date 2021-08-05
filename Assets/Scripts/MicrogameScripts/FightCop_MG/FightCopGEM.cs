@@ -8,6 +8,7 @@ public class FightCopGEM : MonoBehaviour
 	private int punchesDefended;
 	[SerializeField]
 	private int punchesDefendedThreshold;
+	private float currentPunchTimeLimit = 0.8f;
 
 	public bool playerWin = false;
 	public static FightCopGEM current;
@@ -46,7 +47,11 @@ public class FightCopGEM : MonoBehaviour
 	public event Action onCopResumeCombat;
 	public void CopResumeCombat()
 	{
-		if (onCopResumeCombat != null) onCopResumeCombat();
+		if (onCopResumeCombat != null)
+		{
+			currentPunchTimeLimit = Mathf.Clamp(currentPunchTimeLimit - 0.2f, 0.5f, 0.8f);
+			onCopResumeCombat();
+		}
 	}
 
 	public event Action onCopVulnerable;
@@ -81,5 +86,10 @@ public class FightCopGEM : MonoBehaviour
 	private void LoadNextScene_CoroutineStart()
 	{
 		StartCoroutine(LoadNextScene_Coroutine());
+	}
+
+	public float GetCurrentPunchTimeLimit()
+	{
+		return currentPunchTimeLimit;
 	}
 }

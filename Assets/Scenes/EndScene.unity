@@ -242,7 +242,7 @@ MonoBehaviour:
   sceneAnimator: {fileID: 247858038}
   laughClip: {fileID: 8300000, guid: aa9b0cff7aa52ad478672e23cff4956b, type: 3}
   ambientClip: {fileID: 8300000, guid: eae1b18fefe92d74c83a20705e73218f, type: 3}
-  crunchClip: {fileID: 8300000, guid: 357bbbf3cdab8b241b119eeb8302868f, type: 3}
+  crunchClip: {fileID: 8300000, guid: 9c788375e079428498e727e784e915de, type: 3}
   highPitchClip: {fileID: 8300000, guid: d9cd246a0acf1964a9bfdf75eadb7ec8, type: 3}
 --- !u!82 &247858042
 AudioSource:
