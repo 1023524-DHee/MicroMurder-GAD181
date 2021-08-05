@@ -15,30 +15,27 @@ public class SpawnResponse : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Spawn", 1f);
+        TrialGEM.current.onGameStart += Spawn;
+        TrialGEM.current.onGameEnd += GameEndCleanup;
     }
 
     private void Spawn()
     {
         randomResponseIndex = Random.Range(0, 3);
-
         switch (randomResponseIndex)
         {
             // WL
             case 0:
-                print("WL");
                 instantiatedObject1 = Instantiate(positiveResponse, response1Pos);
                 instantiatedObject2 = Instantiate(negativeResponse, response2Pos);
                 break;
             // LW
             case 1:
-                print("LW");
                 instantiatedObject1 = Instantiate(negativeResponse, response1Pos);
                 instantiatedObject2 = Instantiate(positiveResponse, response2Pos);
                 break;
             // LL
             case 2:
-                print("LL");
                 instantiatedObject1 = Instantiate(negativeResponse, response1Pos);
                 instantiatedObject2 = Instantiate(negativeResponse, response2Pos);
                 break;
@@ -109,5 +106,12 @@ public class SpawnResponse : MonoBehaviour
     private void StartCountDown_CoroutineStart()
     {
         StartCoroutine(StartCountdown_Coroutine());
+    }
+
+    private void GameEndCleanup()
+    {
+        StopAllCoroutines();
+        if (instantiatedObject1 != null) Destroy(instantiatedObject1);
+        if (instantiatedObject2 != null) Destroy(instantiatedObject2);
     }
 }

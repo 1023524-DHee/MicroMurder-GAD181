@@ -156,6 +156,7 @@ MonoBehaviour:
   punchesDefendedThreshold: 3
   punchIncrement: 1
   maximumPunchThreshold: 5
+  playerWin: 0
 --- !u!4 &239405024
 Transform:
   m_ObjectHideFlags: 0
@@ -207,7 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239592312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1513355985}
@@ -469,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574194, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_Pivot.x
@@ -537,11 +538,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.14001465
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -586,7 +587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923796268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1513355985}
@@ -622,7 +623,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchInterval: 1
-  fistPrefab: {fileID: 7560901812003223902, guid: 4b407dcbbd66b5d48a7f0a5b1c24f1bc, type: 3}
+  leftFistPrefab: {fileID: 7560901812003223902, guid: 4b407dcbbd66b5d48a7f0a5b1c24f1bc, type: 3}
+  rightFistPrefab: {fileID: 7560901812003223902, guid: 843ddd7ebd26f054aa54a73f01f2dc95, type: 3}
   punchPositions:
   - {fileID: 923796269}
   - {fileID: 239592313}
@@ -843,7 +845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579529482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.8, z: 0}
   m_LocalScale: {x: 2.3672, y: 2.3672, z: 2.3672}
   m_Children: []
   m_Father: {fileID: 0}

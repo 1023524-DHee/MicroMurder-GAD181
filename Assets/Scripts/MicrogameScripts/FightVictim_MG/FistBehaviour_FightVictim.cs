@@ -34,8 +34,12 @@ public class FistBehaviour_FightVictim : MonoBehaviour
         if (!succeedClick)
         {
             FightVictimGEM.current.PlayerTakeDamage();
-            Destroy(gameObject);
         }
+    }
+
+    public void DestroyFist()
+    {
+        Destroy(gameObject);
     }
 
     private void DealDamage_CoroutineStart()

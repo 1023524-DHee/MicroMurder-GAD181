@@ -13,6 +13,7 @@ public class PlayerHealth_Trial : MonoBehaviour
     {
         TrialGEM.current.onCorrectResponseClicked += GainHealth;
         TrialGEM.current.onWrongResponseClicked += TakeDamage;
+        TrialGEM.current.onGameEnd += ReportHealth;
     }
 
 
@@ -25,5 +26,10 @@ public class PlayerHealth_Trial : MonoBehaviour
     private void GainHealth()
     {
         healthBarImage.fillAmount += damageAmount;
+    }
+
+    public void ReportHealth()
+    {
+        TrialGEM.current.SetPlayerHealth(healthBarImage.fillAmount);
     }
 }

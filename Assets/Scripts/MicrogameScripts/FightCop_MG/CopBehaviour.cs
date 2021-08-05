@@ -27,7 +27,9 @@ public class CopBehaviour : MonoBehaviour
                 copHealth -= 1;
                 if (copHealth <= 0)
                 {
+                    FightCopGEM.current.playerWin = true;
                     FightCopGEM.current.GameEnd();
+                    yield break;
                 }
                 copPunched = false;
                 GetComponent<BoxCollider2D>().enabled = false;

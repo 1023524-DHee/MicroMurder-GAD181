@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchesDefendedThreshold: 5
+  playerWin: 0
 --- !u!4 &410840115
 Transform:
   m_ObjectHideFlags: 0
@@ -457,6 +458,10 @@ PrefabInstance:
     - target: {fileID: 4906279644010012021, guid: 61ffe0e0d6bcd69478eac5c706006bc7, type: 3}
       propertyPath: m_Name
       value: MicrogameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906279644010012022, guid: 61ffe0e0d6bcd69478eac5c706006bc7, type: 3}
+      propertyPath: currentState
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4906279644010012023, guid: 61ffe0e0d6bcd69478eac5c706006bc7, type: 3}
       propertyPath: m_RootOrder
@@ -517,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574194, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_Pivot.x

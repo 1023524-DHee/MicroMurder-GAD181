@@ -22,9 +22,10 @@ public class PlayerHealth_CopMG : MonoBehaviour
         //PlayAudio_FightInmate.current.PlayAudioClip("takeDamageSound");
         healthValue += 5;
         imageRenderer.color += new Color(0, 0, 0, healthValue / 255);
-        if (healthValue >= 150)
+        if (healthValue >= 75)
         {
             //PlayAudio_FightInmate.current.PlayAudioClip("deathSound");
+            FightCopGEM.current.playerWin = false;
             FightCopGEM.current.GameEnd();
         }
     }

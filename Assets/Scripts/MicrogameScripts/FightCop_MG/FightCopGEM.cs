@@ -9,6 +9,7 @@ public class FightCopGEM : MonoBehaviour
 	[SerializeField]
 	private int punchesDefendedThreshold;
 
+	public bool playerWin = false;
 	public static FightCopGEM current;
 
 	// Start is called before the first frame update
@@ -60,12 +61,25 @@ public class FightCopGEM : MonoBehaviour
 		if (onGameEnd != null)
 		{
 			onGameEnd();
-			LoadNextScene();
+			LoadNextScene_CoroutineStart();
 		}
 	}
 
-	private void LoadNextScene()
+	IEnumerator LoadNextScene_Coroutine()
 	{
-		MicrogameManager.current.LoadNextMicrogame();
+		yield return new WaitForSeconds(2f);
+		if (playerWin)
+		{
+			MicrogameManager.current.LoadNextMicrogame();
+		}
+		else if (!playerWin)
+		{
+			SceneTransitionManager.current.ReloadCurrentScene();
+		}
+	}
+
+	private void LoadNextScene_CoroutineStart()
+	{
+		StartCoroutine(LoadNextScene_Coroutine());
 	}
 }

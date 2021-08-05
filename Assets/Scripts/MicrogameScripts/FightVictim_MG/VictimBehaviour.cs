@@ -27,7 +27,9 @@ public class VictimBehaviour : MonoBehaviour
                 victimHealth -= 1;
                 if (victimHealth <= 0)
                 {
+                    FightVictimGEM.current.playerWin = true;
                     FightVictimGEM.current.GameEnd();
+                    yield break;
                 }
                 victimPunched = false;
                 GetComponent<BoxCollider2D>().enabled = false;
