@@ -31,14 +31,6 @@ public class MicrogameManager : MonoBehaviour
 		current = this;
 	}
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			LoadNextMicrogame();
-		}
-	}
-
 	public void LoadNextMicrogame()
 	{
 		GameObject[] objs = GameObject.FindGameObjectsWithTag("FromLevelSelect");
