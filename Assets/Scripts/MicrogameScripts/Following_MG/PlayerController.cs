@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -58,4 +59,12 @@ public class PlayerController : MonoBehaviour
         moving = false;
         audio.Stop();
     }
+
+    //void OnTriggerExit2D(Collider2D col)
+    //{
+    //    if (col.CompareTag("Victim"))
+    //    {
+    //        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //    }
+    //}
 }

@@ -9,7 +9,7 @@ public class SpawnCops : MonoBehaviour
 
     void Start()
     {
-        SpawnCops_CoroutineStart();
+        Invoke("SpawnCops_CoroutineStart", 2f);
     }
 
     IEnumerator SpawnCops_Coroutine()

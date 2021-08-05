@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 7660221549420299194}
   m_Layer: 0
   m_Name: Cones
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -372,3 +372,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9
+  audioSource: {fileID: 0}

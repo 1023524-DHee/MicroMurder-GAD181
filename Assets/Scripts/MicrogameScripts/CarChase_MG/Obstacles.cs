@@ -1,45 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Obstacles : MonoBehaviour
 {
     public float speed = 1f;
-    public AudioSource audioSource;
 
     void Start()
     {
-        StartCoroutine(DestroyObject_Coroutine());
-        audioSource = GetComponent<AudioSource>();
+        StartCoroutine(DestroyCop_Coroutine());
     }
-    
+
     void Update()
     {
-        transform.Translate (Vector2.down * speed * Time.deltaTime, Space.World);
-    }
-    
-    IEnumerator DestroyObject_Coroutine()
-    {
-        yield return new WaitForSeconds(6f);
-        Destroy(this.gameObject, 1);
+        transform.Translate(Vector2.down * speed * Time.deltaTime, Space.World);
     }
 
-    IEnumerator TriggerActions(Collider2D col)
+    IEnumerator DestroyCop_Coroutine()
     {
-        audioSource.Play();
-        //Destroy(col.gameObject);
-        yield return new WaitForSeconds(2f);
-
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.Log("Hit!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        StartCoroutine(TriggerActions(col));
+        yield return new WaitForSeconds(4f);
+        Destroy(this.gameObject);
     }
 }
