@@ -50,7 +50,7 @@ public class Spawner : MonoBehaviour
             Transform randomWaypoint = waypoints[Random.Range(0, waypoints.Count)]; // Objects to choose random points
             spawn.GetComponent<SpawnedMovement>().ChangeWaypoint(randomWaypoint); // Objects choose random point after reaching first point
         }
-        yield return new WaitForSeconds(Random.Range(1f,5f)); // wait X amount of seconds before going to new point
+        yield return new WaitForSeconds(Random.Range(1f,2f)); // wait X amount of seconds before going to new point
         StartCoroutine(MoveObject_Coroutine());
     }
 }
