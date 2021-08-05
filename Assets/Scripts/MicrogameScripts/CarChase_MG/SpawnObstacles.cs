@@ -6,11 +6,10 @@ public class SpawnObstacles : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public GameObject[] spawnableObstables;
-    public GameObject roadBlock;
 
     void Start()
     {
-        SpawnObstacles_CoroutineStart();
+        Invoke("SpawnObstacles_CoroutineStart", 2f);
     }
 
     IEnumerator SpawnObstacles_Coroutine()
