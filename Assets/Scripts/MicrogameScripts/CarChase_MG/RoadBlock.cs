@@ -1,18 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
 
 public class RoadBlock : MonoBehaviour
 {
     public float speed = 1f;
-    public AudioSource audioSource;
-
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
 
     void Update()
     {
@@ -20,26 +12,5 @@ public class RoadBlock : MonoBehaviour
         {
             transform.Translate(Vector2.down * speed * Time.deltaTime, Space.World);
         }    
-    }
-
-    IEnumerator TriggerActions(Collider2D col)
-    {
-        //audioSource.Play();
-        yield return new WaitForSeconds(1f);
-        //Destroy(col.gameObject);
-
-        if (col.gameObject.CompareTag("Player"))
-        {
-            Cursor.visible = true;
-            //MicrogameManager.current.LoadNextMicrogame();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-
-        //Destroy(gameObject);
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        StartCoroutine(TriggerActions(col));
     }
 }

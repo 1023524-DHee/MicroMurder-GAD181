@@ -24,25 +24,44 @@ public class Driving : MonoBehaviour
         transform.position = Vector2.Lerp(transform.position, new Vector2(Mathf.Clamp(cursorPos.x, xMin, xMax), Mathf.Clamp(cursorPos.y, yMin, yMax)), speed);
     }
 
-    IEnumerator TriggerActions()
+    IEnumerator Crash()
     {
         GetComponent<BoxCollider2D>().enabled = false;
         this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        this.gameObject.GetComponent<AudioSource>().enabled = false;
+
         yield return new WaitForSeconds(2f);
-        
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator Finish()
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
+        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        this.gameObject.GetComponent<AudioSource>().enabled = false;
+
+        yield return new WaitForSeconds(2f);
+
+        MicrogameManager.current.LoadNextMicrogame();
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Obstacles"))
         {
-            AudioSource.PlayClipAtPoint(crashSound, transform.position);
+            AudioSource.PlayClipAtPoint(crashSound, transform.position, 0.4f);
 
             Debug.Log("Oops!");
-            StartCoroutine(TriggerActions());
+            StartCoroutine(Crash());
         }
-        
+        else if (col.CompareTag("Finish"))
+        {
+            AudioSource.PlayClipAtPoint(crashSound, transform.position, 0.4f);
+
+            Debug.Log("Damn!");
+            StartCoroutine(Finish());
+        }
     }
 }
 
