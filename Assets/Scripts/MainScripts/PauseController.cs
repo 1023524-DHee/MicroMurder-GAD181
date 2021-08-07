@@ -12,7 +12,18 @@ public class PauseController : MonoBehaviour
         current = this;
     }
 
-    public void PauseGame()
+	private void Update()
+	{
+        if (gameIsPaused)
+        {
+            if (Input.GetMouseButtonDown(2))
+            {
+                ResumeGame();
+            }
+        }
+	}
+
+	public void PauseGame()
     {
         gameIsPaused = true;
         AudioListener.pause = true;
