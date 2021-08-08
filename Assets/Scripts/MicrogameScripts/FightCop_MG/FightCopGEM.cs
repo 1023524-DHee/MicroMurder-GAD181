@@ -49,7 +49,7 @@ public class FightCopGEM : MonoBehaviour
 	{
 		if (onCopResumeCombat != null)
 		{
-			currentPunchTimeLimit = Mathf.Clamp(currentPunchTimeLimit - 0.25f, 0.3f, 0.8f);
+			currentPunchTimeLimit = Mathf.Clamp(currentPunchTimeLimit - 0.1f, 0.4f, 0.8f);
 			onCopResumeCombat();
 		}
 	}

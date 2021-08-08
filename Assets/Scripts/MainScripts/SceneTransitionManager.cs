@@ -20,7 +20,12 @@ public class SceneTransitionManager : MonoBehaviour
     // Called in animation component
     public void PauseAfterSceneChange()
     {
-        PauseController.current.PauseGame();
+        if (MicrogameManager.current.currentState != MicrogameState.START &&
+            MicrogameManager.current.currentState != MicrogameState.END)
+        {
+            PauseController.current.PauseGame();
+        }
+        
     }
 
     public void ReloadCurrentScene()
