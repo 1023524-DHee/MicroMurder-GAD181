@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Disclaimer_MG.unity
     guid: 9f9cb0a6ae4a3dc45bb316876a7a0bca
   - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 82b3a4ac396cef24485674526a711125
+  - enabled: 1
     path: Assets/Scenes/Pre-Murder Scenes/Lockpicking_MG.unity
     guid: e015fad6970aac24996c449400a65ad0
   - enabled: 1
@@ -20,9 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pre-Murder Scenes/BoxLockpick_MG.unity
     guid: 6f1745a65ca5bb94282a6a3e4640ed85
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Murder Scenes/AxeMurder_MG.unity
     guid: ba4a5846661063245a6f70458f907aef
+  - enabled: 1
+    path: Assets/Scenes/Murder Scenes/FightVictim_MG.unity
+    guid: ab3836c9de55d2c4285edd054cd0094a
   - enabled: 1
     path: Assets/Scenes/Murder Scenes/ShootGun_MG.unity
     guid: 6335f0e27c5c18e4398550f3b65eff93
@@ -56,10 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jail Scenes/FightInmates_MG.unity
     guid: 8e08a034fc5982846bf8ea7a202d7018
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jail Scenes/LiftWeights_MG.unity
     guid: dd35c68d1f2ba1b4892a6b6b68d907c0
-  - enabled: 1
-    path: Assets/Scenes/EndScene.unity
-    guid: 82b3a4ac396cef24485674526a711125
   m_configObjects: {}

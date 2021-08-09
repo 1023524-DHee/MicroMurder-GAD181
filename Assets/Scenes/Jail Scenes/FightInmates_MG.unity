@@ -820,6 +820,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 812755873}
     m_Modifications:
     - target: {fileID: 1942088320, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
+      propertyPath: pauseGame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942088320, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: transitionTriggerName
       value: End_Transition
       objectReference: {fileID: 0}

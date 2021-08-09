@@ -565,11 +565,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240263195}
   m_CullTransparentMesh: 1
---- !u!95 &338951677 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1410253057853574204, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
-  m_PrefabInstance: {fileID: 401103008}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &350879251 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
@@ -658,16 +653,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 850028462}
     m_Modifications:
     - target: {fileID: 1942088320, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
-      propertyPath: transitionAnimator
-      value: 
-      objectReference: {fileID: 338951677}
+      propertyPath: transitionTriggerName
+      value: Jail_Transition
+      objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574194, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_Name
       value: TransitionPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1410253057853574194, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_Pivot.x
@@ -751,10 +742,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1410253057853574204, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
-      propertyPath: m_UpdateMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

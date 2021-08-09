@@ -9,6 +9,7 @@ public class Gun_ShootGunMG : MonoBehaviour
 
     private float currentSpeed;
     private float currentShakeAmount;
+    private float percentageSlowdown;
     private bool canShoot;
     private bool gameEnded;
 
@@ -19,6 +20,7 @@ public class Gun_ShootGunMG : MonoBehaviour
         Cursor.visible = false;
         currentShakeAmount = maxShakeAmount;
         currentSpeed = maxSpeed;
+        percentageSlowdown = 100;
 	}
 
 	// Update is called once per frame
@@ -34,8 +36,9 @@ public class Gun_ShootGunMG : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            currentSpeed = Mathf.Clamp(currentSpeed - 0.01f, 1f, maxSpeed);
-            currentShakeAmount = Mathf.Clamp(currentShakeAmount - 0.01f, 1f, maxShakeAmount);
+            percentageSlowdown = Mathf.Clamp(percentageSlowdown - 0.1f,0,100);
+            currentSpeed = Mathf.Clamp(maxSpeed * percentageSlowdown/100f, 1f, maxSpeed);
+            currentShakeAmount = Mathf.Clamp(maxShakeAmount * percentageSlowdown/100f, 1f, maxShakeAmount);
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -50,6 +53,7 @@ public class Gun_ShootGunMG : MonoBehaviour
             }
             currentSpeed = maxSpeed;
             currentShakeAmount = maxShakeAmount;
+            percentageSlowdown = 100f;
         }
         Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(cursorPos.x + Mathf.Sin(Time.time * currentSpeed) * currentShakeAmount, cursorPos.y + Mathf.Sin(Time.time * currentSpeed) * currentShakeAmount);

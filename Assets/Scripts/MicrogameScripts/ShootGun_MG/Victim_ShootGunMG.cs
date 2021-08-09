@@ -56,10 +56,12 @@ public class Victim_ShootGunMG : MonoBehaviour
 
     private void ChangeVictimAnimation()
     {
-        victimHealth--;
         ChangeAudio();
         victimAnimator.SetTrigger("ShotTrigger");
         backgroundGO.GetComponent<Animator>().speed -= 0.25f;
+
+        victimHealth--;
+        victimSpeed /= 2;
         if (victimHealth <= 0)
         {
             ShootGunGEM.current.VictimDead(true);

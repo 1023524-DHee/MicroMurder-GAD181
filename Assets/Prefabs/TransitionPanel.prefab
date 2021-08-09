@@ -113,6 +113,7 @@ MonoBehaviour:
   transitionAnimator: {fileID: 1410253057853574204}
   transitionTime: 4
   transitionTriggerName: CleanUp_Transition
+  pauseGame: 1
 --- !u!114 &5862133208995326695
 MonoBehaviour:
   m_ObjectHideFlags: 0
