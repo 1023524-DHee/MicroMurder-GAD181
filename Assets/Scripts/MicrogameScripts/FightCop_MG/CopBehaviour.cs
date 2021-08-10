@@ -40,6 +40,7 @@ public class CopBehaviour : MonoBehaviour
                 copHealth -= 1;
                 if (copHealth <= 0)
                 {
+                    copRenderer.color = Color.white;
                     FightCopGEM.current.playerWin = true;
                     FightCopGEM.current.GameEnd();
                     yield break;
@@ -62,7 +63,7 @@ public class CopBehaviour : MonoBehaviour
     IEnumerator CopFlash_Coroutine()
     {
         yield return new WaitForSeconds(0.1f);
-        copRenderer.color = Color.red;
+        copRenderer.color = Color.black;
         yield return new WaitForSeconds(0.1f);
         copRenderer.color = Color.white;
         CopFlash_CoroutineStart();
@@ -75,7 +76,7 @@ public class CopBehaviour : MonoBehaviour
 
     private void CopFlash_CoroutineStop()
     {
-        copRenderer.color = Color.white;
+        copRenderer.color = Color.gray;
         StopCoroutine(flashingCoroutine);
     }
 

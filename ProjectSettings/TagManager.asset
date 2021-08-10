@@ -10,6 +10,7 @@ TagManager:
   - LockCheck
   - Obstacles
   - Victim
+  - StartButton
   layers:
   - Default
   - TransparentFX
