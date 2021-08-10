@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class ScrollerScript : MonoBehaviour
 {
+    private BoxCollider2D collider;
     private Rigidbody2D rb;
+    private float width;
 
-    private float height;
     public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
+        collider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(0, speed);
+
+        width = collider.size.x;
+        collider.enabled = false;
+
+        rb.velocity = new Vector2(speed, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -height)
+        if (transform.position.x < -width)
         {
-            Vector2 vector = new Vector2(height * 2f, 0);
+            Vector2 vector = new Vector2(width * 2f, 0);
             transform.position = (Vector2)transform.position + vector;
         }
     }
