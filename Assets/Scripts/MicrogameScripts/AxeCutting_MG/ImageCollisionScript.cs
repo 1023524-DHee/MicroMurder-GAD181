@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ImageCollisionScript : MonoBehaviour
 {
     bool inBodyPart = false;
-    
-
+    public Sprite BodyPartCut;
+    private int cutInt = 0;
 
 
     // Start is called before the first frame update
@@ -18,21 +19,27 @@ public class ImageCollisionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) print("ASD");
+        
 
         if (inBodyPart == true)
         {
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
-                //slash and change body part sprite
-                print("chop chop");
+                    
+                gameObject.GetComponent<SpriteRenderer>().sprite = BodyPartCut;
+                cutInt++;
+                    
+
             }
 
 
 
         }
 
-
+        if (cutInt == 5)
+        {
+            MicrogameManager.current.LoadNextMicrogame();
+        }
 
     }
 
@@ -40,13 +47,13 @@ public class ImageCollisionScript : MonoBehaviour
     void OnMouseEnter()
     {
         inBodyPart = true;
-        print("You've collided with the image");
+        
     }
 
     void OnMouseExit()
     {
         inBodyPart = false;
-
+        
 
     }
 
