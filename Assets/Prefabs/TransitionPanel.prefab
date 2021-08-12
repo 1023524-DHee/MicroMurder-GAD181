@@ -91,7 +91,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b0838bcf83d2414aaa136e5d917ac26, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -112,7 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 1410253057853574204}
   transitionTime: 4
-  transitionTriggerName: Jail_Transition
+  transitionTriggerName: CleanUp_Transition
+  pauseGame: 1
 --- !u!114 &5862133208995326695
 MonoBehaviour:
   m_ObjectHideFlags: 0

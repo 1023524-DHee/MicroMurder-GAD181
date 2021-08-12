@@ -14,12 +14,12 @@ public class SpawnedMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (movePosition == null) return;
 
         Vector3 dir = (movePosition.transform.position - transform.position).normalized;
-        rigidbody.MovePosition(transform.position + dir * 150f * Time.fixedDeltaTime);  // speed of objects
+        rigidbody.MovePosition(transform.position + dir * 200f * Time.deltaTime);  // wait a certain amount of time before moving to new point
 
     }
 

@@ -217,6 +217,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0.8
+  startPunchClip: {fileID: 8300000, guid: c799675304ac8f94382d03c185417847, type: 3}
+  punchDeflectedClip: {fileID: 8300000, guid: 038a5c3a29fdc164d906bdb1e6795b7e, type: 3}
+  punchLandedClip: {fileID: 8300000, guid: 9f6d964258f27b24b9b927c0691f984b, type: 3}
 --- !u!95 &523100493
 Animator:
   serializedVersion: 3

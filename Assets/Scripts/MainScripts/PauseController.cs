@@ -7,12 +7,29 @@ public class PauseController : MonoBehaviour
     public static bool gameIsPaused;
     public static PauseController current;
 
+    private GameObject startGameButton;
     void Awake()
     {
         current = this;
     }
 
-    public void PauseGame()
+	private void Start()
+	{
+        startGameButton = GameObject.FindGameObjectWithTag("StartButton");
+	}
+
+	private void Update()
+	{
+        if (gameIsPaused)
+        {
+            if (Input.GetMouseButtonDown(2))
+            {
+                ResumeGame();
+            }
+        }
+	}
+
+	public void PauseGame()
     {
         gameIsPaused = true;
         AudioListener.pause = true;
@@ -21,6 +38,7 @@ public class PauseController : MonoBehaviour
 
     public void ResumeGame()
     {
+        if (startGameButton != null) startGameButton.GetComponent<Animator>().enabled = false;
         gameIsPaused = false;
         AudioListener.pause = false;
         Time.timeScale = 1f;

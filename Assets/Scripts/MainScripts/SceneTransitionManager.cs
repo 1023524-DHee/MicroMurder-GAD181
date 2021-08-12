@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class SceneTransitionManager : MonoBehaviour
 {
     public static SceneTransitionManager current;
-
     public Animator transitionAnimator;
+
     public float transitionTime;
     public string transitionTriggerName;
+    public bool pauseGame = true;
 
 	private void Awake()
 	{
@@ -20,7 +21,11 @@ public class SceneTransitionManager : MonoBehaviour
     // Called in animation component
     public void PauseAfterSceneChange()
     {
-        PauseController.current.PauseGame();
+        if (pauseGame)
+        {
+            PauseController.current.PauseGame();
+        }
+        
     }
 
     public void ReloadCurrentScene()
