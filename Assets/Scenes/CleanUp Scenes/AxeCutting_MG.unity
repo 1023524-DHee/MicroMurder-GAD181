@@ -385,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyPartCut: {fileID: -1618567061052157611, guid: 01f11d8622d03f74bbb847d92e459f6d, type: 3}
   managerObject: {fileID: 1669394762}
+  chargeBar: {fileID: 2084193979}
 --- !u!65 &499793513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -672,6 +673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyPartCut: {fileID: -7633151329643680705, guid: 01f11d8622d03f74bbb847d92e459f6d, type: 3}
   managerObject: {fileID: 1669394762}
+  chargeBar: {fileID: 2084193979}
 --- !u!65 &789010917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -882,8 +884,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 390, y: -36}
-  m_SizeDelta: {x: 85.8174, y: 85.8174}
+  m_AnchoredPosition: {x: -297.5, y: 231}
+  m_SizeDelta: {x: 45.1826, y: 44.1829}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616929694
 MonoBehaviour:
@@ -1040,6 +1042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyPartCut: {fileID: 4601702605382263660, guid: 01f11d8622d03f74bbb847d92e459f6d, type: 3}
   managerObject: {fileID: 1669394762}
+  chargeBar: {fileID: 2084193979}
 --- !u!65 &1666757210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1265,6 +1268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyPartCut: {fileID: 6738415656033071170, guid: 01f11d8622d03f74bbb847d92e459f6d, type: 3}
   managerObject: {fileID: 1669394762}
+  chargeBar: {fileID: 2084193979}
 --- !u!212 &1955703128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1356,6 +1360,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06118253, y: 0.15739286}
   m_EdgeRadius: 0
+--- !u!1 &2084193979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8076208137167677708, guid: 60a1f8548ef617a4f9e13b331a8e426c, type: 3}
+  m_PrefabInstance: {fileID: 8076208135829754231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2119336727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyPartCut: {fileID: -7338440088705634936, guid: 01f11d8622d03f74bbb847d92e459f6d, type: 3}
   managerObject: {fileID: 1669394762}
+  chargeBar: {fileID: 2084193979}
 --- !u!65 &2119336731
 BoxCollider:
   m_ObjectHideFlags: 0

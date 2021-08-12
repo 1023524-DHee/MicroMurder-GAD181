@@ -429,7 +429,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242270277}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 32b6e5dced2310f44b88132f4ea4e211, type: 2}
   m_CullingMode: 0
@@ -531,7 +531,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277694591}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 32b6e5dced2310f44b88132f4ea4e211, type: 2}
   m_CullingMode: 0
@@ -1203,7 +1203,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913143993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 32b6e5dced2310f44b88132f4ea4e211, type: 2}
   m_CullingMode: 0
@@ -2016,7 +2016,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700732812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 32b6e5dced2310f44b88132f4ea4e211, type: 2}
   m_CullingMode: 0
@@ -2288,6 +2288,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 59865473}
     m_Modifications:
+    - target: {fileID: 1942088320, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
+      propertyPath: pauseGame
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574194, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_Name
       value: TransitionPanel
