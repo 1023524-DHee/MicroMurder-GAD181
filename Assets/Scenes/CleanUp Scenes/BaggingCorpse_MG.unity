@@ -236,6 +236,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 277694594}
 --- !u!1 &59865469
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 242270279}
   - component: {fileID: 242270278}
+  - component: {fileID: 242270280}
   m_Layer: 0
   m_Name: ArmBag
   m_TagString: Untagged
@@ -419,6 +421,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &242270280
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242270277}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32b6e5dced2310f44b88132f4ea4e211, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &277694591
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 277694593}
   - component: {fileID: 277694592}
+  - component: {fileID: 277694594}
   m_Layer: 0
   m_Name: TorsoBag
   m_TagString: Untagged
@@ -501,6 +523,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &277694594
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277694591}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32b6e5dced2310f44b88132f4ea4e211, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &323304787
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +655,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 277694594}
 --- !u!1 &577962449
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +769,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 913143996}
 --- !u!1 &633783130
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +805,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 242270280}
 --- !u!212 &633783132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -953,6 +997,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 913143996}
 --- !u!1 &889745592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1111,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 913143996}
 --- !u!1 &913143993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 913143995}
   - component: {fileID: 913143994}
+  - component: {fileID: 913143996}
   m_Layer: 0
   m_Name: LegBag
   m_TagString: Untagged
@@ -1148,6 +1195,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &913143996
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913143993}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32b6e5dced2310f44b88132f4ea4e211, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1051409543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1249,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 1700732815}
 --- !u!212 &1051409545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1296,6 +1363,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 242270280}
 --- !u!212 &1092531206
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1409,6 +1477,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 242270280}
 --- !u!212 &1128842803
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1588,6 +1657,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 242270280}
 --- !u!212 &1221618353
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1776,6 +1846,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 1700732815}
 --- !u!212 &1528333303
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1864,6 +1935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1700732814}
   - component: {fileID: 1700732813}
+  - component: {fileID: 1700732815}
   m_Layer: 0
   m_Name: HeadBag
   m_TagString: Untagged
@@ -1936,6 +2008,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1700732815
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700732812}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32b6e5dced2310f44b88132f4ea4e211, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1719149559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2189,6 +2280,7 @@ MonoBehaviour:
   textPickupClip: {fileID: 0}
   textPlacedClip: {fileID: 0}
   textPlacedFailClip: {fileID: 0}
+  bagAnimator: {fileID: 913143996}
 --- !u!1001 &1972403560
 PrefabInstance:
   m_ObjectHideFlags: 0
