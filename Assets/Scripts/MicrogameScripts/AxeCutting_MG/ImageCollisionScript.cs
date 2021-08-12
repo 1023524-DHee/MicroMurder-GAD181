@@ -7,7 +7,7 @@ public class ImageCollisionScript : MonoBehaviour
 {
     bool inBodyPart = false;
     public Sprite BodyPartCut;
-    private int cutInt = 0;
+    public GameObject managerObject;
 
 
     // Start is called before the first frame update
@@ -27,19 +27,15 @@ public class ImageCollisionScript : MonoBehaviour
             {
                     
                 gameObject.GetComponent<SpriteRenderer>().sprite = BodyPartCut;
-                cutInt++;
-                    
-
+                managerObject.GetComponent<IntManager>().cutInt++;
+                
             }
 
 
 
         }
 
-        if (cutInt == 5)
-        {
-            MicrogameManager.current.LoadNextMicrogame();
-        }
+        
 
     }
 
