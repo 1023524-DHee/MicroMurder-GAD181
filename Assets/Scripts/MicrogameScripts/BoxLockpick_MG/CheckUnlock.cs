@@ -6,12 +6,13 @@ public class CheckUnlock : MonoBehaviour
 {
 	private bool canUnlock = false;
 
-	public AudioClip unlockSound;
+	public AudioClip triggerSound, unlockedSound;
 
 	private void Update()
 	{
 		if (Input.GetMouseButtonUp(0) && canUnlock)
 		{
+			AudioSource.PlayClipAtPoint(unlockedSound, transform.position);
 			BoxLockpick_GEM.current.CorrectLockPositionEntered();
 		}
 	}
@@ -21,7 +22,7 @@ public class CheckUnlock : MonoBehaviour
 		if (collision.CompareTag("LockCheck"))
 		{
 			canUnlock = true;
-			AudioSource.PlayClipAtPoint(unlockSound, transform.position);
+			AudioSource.PlayClipAtPoint(triggerSound, transform.position);
 		}
 	}
 

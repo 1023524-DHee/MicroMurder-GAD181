@@ -7,7 +7,7 @@ public class PunchSpawner : MonoBehaviour
     private int currentPunchPosition;
 
     public float punchInterval;
-    public GameObject fistPrefab;
+    public GameObject leftFistPrefab, rightFistPrefab;
     public List<Transform> punchPositions;
 
     // Start is called before the first frame update
@@ -25,14 +25,24 @@ public class PunchSpawner : MonoBehaviour
     IEnumerator ChooseRandomPosition()
     {
         yield return new WaitForSeconds(punchInterval);
-        int newRandomCopPosition = Random.Range(0, punchPositions.Count);
-        while (newRandomCopPosition == currentPunchPosition)
+        int newRandomFistPosition = Random.Range(0, punchPositions.Count);
+
+        switch (newRandomFistPosition)
         {
-            newRandomCopPosition = Random.Range(0, punchPositions.Count);
-            yield return null;
+            case 0:
+                Instantiate(leftFistPrefab, punchPositions[0]);
+                break;
+            case 1:
+                Instantiate(leftFistPrefab, punchPositions[1]);
+                break;
+            case 2:
+                Instantiate(rightFistPrefab, punchPositions[2]);
+                break;
+            case 3:
+                Instantiate(rightFistPrefab, punchPositions[3]);
+                break;
         }
-        currentPunchPosition = newRandomCopPosition;
-        Instantiate(fistPrefab, punchPositions[currentPunchPosition]);
+
         ChooseRandomPosition_CoroutineStart();
     }
 

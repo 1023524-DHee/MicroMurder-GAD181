@@ -12,53 +12,41 @@ EditorBuildSettings:
     path: Assets/Scenes/Disclaimer_MG.unity
     guid: 9f9cb0a6ae4a3dc45bb316876a7a0bca
   - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 82b3a4ac396cef24485674526a711125
+  - enabled: 1
     path: Assets/Scenes/Pre-Murder Scenes/Lockpicking_MG.unity
     guid: e015fad6970aac24996c449400a65ad0
   - enabled: 1
     path: Assets/Scenes/Pre-Murder Scenes/FollowingSomeone_MG.unity
     guid: 81bd1043572c15b4b9c181a5d2d0485f
-  - enabled: 0
-    path: 
-    guid: 9bb27bd4ac3601f45957a76c533d2118
-  - enabled: 0
-    path: 
-    guid: a37f805bb593ff94f9f559522c2c86d4
   - enabled: 1
+    path: Assets/Scenes/Pre-Murder Scenes/BoxLockpick_MG.unity
+    guid: 6f1745a65ca5bb94282a6a3e4640ed85
+  - enabled: 0
     path: Assets/Scenes/Murder Scenes/AxeMurder_MG.unity
     guid: ba4a5846661063245a6f70458f907aef
-  - enabled: 0
-    path: 
-    guid: 8f4e277e30159de419484a76f0549f5b
+  - enabled: 1
+    path: Assets/Scenes/Murder Scenes/FightVictim_MG.unity
+    guid: ab3836c9de55d2c4285edd054cd0094a
   - enabled: 1
     path: Assets/Scenes/Murder Scenes/ShootGun_MG.unity
     guid: 6335f0e27c5c18e4398550f3b65eff93
   - enabled: 1
     path: Assets/Scenes/Murder Scenes/ShootSniper_MG.unity
     guid: 9131cc10349fe6f468ea7cb8e07e70f7
-  - enabled: 0
-    path: 
-    guid: e3e201b4b68e5d240b0dcc657ee385d5
   - enabled: 1
     path: Assets/Scenes/CleanUp Scenes/AxeCutting_MG.unity
     guid: 960804e809c26054fb4716f7c6544792
   - enabled: 1
     path: Assets/Scenes/CleanUp Scenes/BaggingCorpse_MG.unity
     guid: 100e2fe76c03709408943823b41c5271
-  - enabled: 0
-    path: 
-    guid: 48fa0bf669c17ee41ba705855aff7a90
   - enabled: 1
     path: Assets/Scenes/CleanUp Scenes/CleaningWeapon_MG.unity
     guid: 2dadeffc9d0dba248b0b6975d2834d10
-  - enabled: 0
-    path: 
-    guid: 8feeab380338a1444956b13003974e44
   - enabled: 1
     path: Assets/Scenes/Chase Scenes/CarChase_MG.unity
     guid: 7e32db069ae16c54b9dd73a3683d3c14
-  - enabled: 0
-    path: 
-    guid: 826b1f33860498149969edfa59fd20fd
   - enabled: 1
     path: Assets/Scenes/Chase Scenes/RunningSt_MG.unity
     guid: 7cab5f5272b2fe648950b502d46b5ce7
@@ -71,16 +59,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Caught Scenes/Trial_MG.unity
     guid: 3ae5980d2c1fe5f438a7dffe69e18cb6
-  - enabled: 0
-    path: 
-    guid: d5b4ef9437e5ac748963db657656e14c
   - enabled: 1
     path: Assets/Scenes/Jail Scenes/FightInmates_MG.unity
     guid: 8e08a034fc5982846bf8ea7a202d7018
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jail Scenes/LiftWeights_MG.unity
     guid: dd35c68d1f2ba1b4892a6b6b68d907c0
-  - enabled: 1
-    path: Assets/Scenes/EndScene.unity
-    guid: 82b3a4ac396cef24485674526a711125
   m_configObjects: {}
