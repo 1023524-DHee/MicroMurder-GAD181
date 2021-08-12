@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
         current = this;
         moving = false;
         currentDirection = 1;
+        Invoke("EnableBoxCollider", 4f);
     }
 
     void Update()
@@ -36,6 +38,11 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Moving", moving);
     }
     
+    void EnableBoxCollider()
+    {
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
     public void Move(int direction)
     {
         moving = true;
@@ -52,4 +59,12 @@ public class PlayerController : MonoBehaviour
         moving = false;
         audio.Stop();
     }
+
+    //void OnTriggerExit2D(Collider2D col)
+    //{
+    //    if (col.CompareTag("Victim"))
+    //    {
+    //        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //    }
+    //}
 }

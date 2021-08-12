@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1410253057853574205}
   - component: {fileID: 1410253057853574204}
   - component: {fileID: 1942088320}
+  - component: {fileID: 5862133208995326695}
   m_Layer: 5
   m_Name: TransitionPanel
   m_TagString: Untagged
@@ -29,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 1410253057853574194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.04, y: 1.04, z: 1.04}
   m_Children:
   - {fileID: 1410253059061439562}
   m_Father: {fileID: 0}
@@ -90,7 +91,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b0838bcf83d2414aaa136e5d917ac26, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -109,9 +110,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744467b8bb9f335438a6fb2329ef7439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 1410253057853574204}
+  transitionAnimator: {fileID: 1410253057853574204}
   transitionTime: 4
-  transitionTriggerName: PreMurder_Transition
+  transitionTriggerName: CleanUp_Transition
+  pauseGame: 1
+--- !u!114 &5862133208995326695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410253057853574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3426056b2743840b5e276a8c5c9c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1410253059061439561
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class LyingGEM : MonoBehaviour
 {
     public static LyingGEM current;
 
+	private float finalPlayerHealth;
+
 	private void Awake()
 	{
 		current = this;
@@ -45,9 +47,21 @@ public class LyingGEM : MonoBehaviour
 		}
 	}
 
+	public void SetFinalPlayerHealth(float health)
+	{
+		finalPlayerHealth = health;
+	}
+
 	private IEnumerator LoadNextScene()
 	{
 		yield return new WaitForSeconds(2.5f);
-		MicrogameManager.current.LoadNextMicrogame();
+		if (finalPlayerHealth <= 0.3f)
+		{
+			SceneTransitionManager.current.ReloadCurrentScene();
+		}
+		else
+		{
+			MicrogameManager.current.LoadNextMicrogame();
+		}
 	}
 }

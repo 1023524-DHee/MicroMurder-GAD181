@@ -7,6 +7,10 @@ TagManager:
   - Text
   - HideBoxes
   - FromLevelSelect
+  - LockCheck
+  - Obstacles
+  - Victim
+  - StartButton
   layers:
   - Default
   - TransparentFX
