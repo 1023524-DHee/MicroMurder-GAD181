@@ -19,8 +19,6 @@ public class ImageCollisionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if (inBodyPart == true)
         {
             if (Input.GetKeyUp(KeyCode.Mouse0))
@@ -28,21 +26,18 @@ public class ImageCollisionScript : MonoBehaviour
                     
                 gameObject.GetComponent<SpriteRenderer>().sprite = BodyPartCut;
                 cutInt++;
-                    
-
+                CheckFinish();
             }
-
-
-
         }
+    }
 
+    void CheckFinish()
+    {
         if (cutInt == 5)
         {
             MicrogameManager.current.LoadNextMicrogame();
         }
-
     }
-
   
     void OnMouseEnter()
     {
