@@ -7,6 +7,7 @@ public class FistBehaviour_FightVictim : MonoBehaviour
     private bool playerClicked = false;
 
     public float timeLimit = 0.8f;
+    public AudioClip startPunchClip, punchDeflectedClip, punchLandedClip;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class FistBehaviour_FightVictim : MonoBehaviour
 
     IEnumerator DealDamage()
     {
+        AudioSource.PlayClipAtPoint(startPunchClip, transform.position);
         bool succeedClick = false;
         float initialTime = Time.time;
 
@@ -26,7 +28,8 @@ public class FistBehaviour_FightVictim : MonoBehaviour
                 playerClicked = false;
                 succeedClick = true;
                 FightVictimGEM.current.PunchClickedSuccess();
-                Destroy(gameObject);
+                AudioSource.PlayClipAtPoint(punchDeflectedClip, transform.position);
+                GetComponent<Animator>().SetTrigger("Deflected");
             }
             yield return null;
         }
@@ -34,6 +37,7 @@ public class FistBehaviour_FightVictim : MonoBehaviour
         if (!succeedClick)
         {
             FightVictimGEM.current.PlayerTakeDamage();
+            AudioSource.PlayClipAtPoint(punchLandedClip, transform.position);
         }
     }
 

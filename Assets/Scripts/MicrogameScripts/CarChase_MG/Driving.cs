@@ -42,7 +42,7 @@ public class Driving : MonoBehaviour
         this.gameObject.GetComponent<AudioSource>().enabled = false;
 
         yield return new WaitForSeconds(2f);
-
+        Cursor.visible = true;
         MicrogameManager.current.LoadNextMicrogame();
     }
 

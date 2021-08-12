@@ -5,8 +5,8 @@ using UnityEngine;
 public class LockParts : MonoBehaviour
 {
     private List<(int, int)> entryExitPairs = new List<(int, int)>();
+    private Animator lockAnimation;
 
-    public Animator lockAnimation;
     public List<int> entryList;
     public List<int> exitList;
 
