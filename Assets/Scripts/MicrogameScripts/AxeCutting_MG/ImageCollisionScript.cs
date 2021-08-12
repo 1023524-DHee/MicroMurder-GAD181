@@ -8,7 +8,7 @@ public class ImageCollisionScript : MonoBehaviour
     bool inBodyPart = false;
     public Sprite BodyPartCut;
     public GameObject managerObject;
-
+    private int cutInt = 0;
 
     // Start is called before the first frame update
     void Start()
