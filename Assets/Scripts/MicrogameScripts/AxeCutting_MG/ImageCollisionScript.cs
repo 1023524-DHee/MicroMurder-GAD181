@@ -9,24 +9,17 @@ public class ImageCollisionScript : MonoBehaviour
     public Sprite BodyPartCut;
     public GameObject managerObject;
     public GameObject chargeBar;
+    public AudioClip cutClip;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (inBodyPart == true)
         {
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
-                if (chargeBar.GetComponent<ChargeBar>().chargeBarAmount == 11f)
+                if(chargeBar.GetComponent<ChargeBar>().chargeBarAmount == 11f)
                 {
-                    if (gameObject.GetComponent<SpriteRenderer>().sprite == BodyPartCut)
+                    if(gameObject.GetComponent<SpriteRenderer>().sprite == BodyPartCut)
                     {
                         Debug.Log("You've alredy cut this body part.");
                     }
@@ -34,29 +27,23 @@ public class ImageCollisionScript : MonoBehaviour
                     {
                         gameObject.GetComponent<SpriteRenderer>().sprite = BodyPartCut;
                         managerObject.GetComponent<IntManager>().cutInt++;
+                        AxeCuttingAudioManager.current.PlaySound(cutClip);
                     }
+
                 }
-                
+                 
             }
+            
         }
     }
 
-    
-  
     void OnMouseEnter()
     {
         inBodyPart = true;
-        
     }
 
     void OnMouseExit()
     {
         inBodyPart = false;
-        
-
     }
-
-
-
-
 }

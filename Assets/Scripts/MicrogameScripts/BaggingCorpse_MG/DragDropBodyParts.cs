@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DragDropBodyParts : MonoBehaviour
 {
-    public GameObject correctPosition;
-    //public AudioClip textPickupClip, textPlacedClip, textPlacedFailClip;
+    public GameObject correctPosition, sceneTransition;
+    public AudioClip bodyPartPickUpClip, bagClip;
     public Animator bagAnimator;
-
+    public Sprite bagSprite; 
+    
     private bool moving;
     private bool inPosition;
 
@@ -45,8 +46,8 @@ public class DragDropBodyParts : MonoBehaviour
         startPosY = mousePos.y - transform.position.y;
 
         moving = true;
-       
 
+        BaggingCorpseAudioManager.current.PlayBodyPickUpSound(bodyPartPickUpClip);
         StartFlash();
     }
 
@@ -61,16 +62,16 @@ public class DragDropBodyParts : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
             inPosition = true;
 
-            
-            
 
+            sceneTransition.GetComponent<ChangeSceneWhenBagsFull>().bodyPartInt++;
+            BaggingCorpseAudioManager.current.PlayBagSound(bagClip);
             StopFlash();
         }
         else
         {
             transform.position = resetPosition;
-            
 
+            BaggingCorpseAudioManager.current.PlayBodyPickUpSound(bodyPartPickUpClip);
             StopFlash();
         }
     }
@@ -83,7 +84,7 @@ public class DragDropBodyParts : MonoBehaviour
     void StopFlash()
     {
         bagAnimator.enabled = false;
-        correctPosition.GetComponent<SpriteRenderer>().color = Color.white;
+        correctPosition.GetComponent<SpriteRenderer>().sprite = bagSprite; 
     }
 } 
 
