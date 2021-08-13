@@ -233,6 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 277694591}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 277694594}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!1 &59865469
@@ -550,6 +553,9 @@ GameObject:
   m_Component:
   - component: {fileID: 308267628}
   - component: {fileID: 308267627}
+  - component: {fileID: 308267630}
+  - component: {fileID: 308267629}
+  - component: {fileID: 308267631}
   m_Layer: 0
   m_Name: BaggingCorpseBackground
   m_TagString: Untagged
@@ -622,6 +628,127 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &308267629
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308267626}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &308267630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308267626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdf451e0ff080944b640bf8b1ab0e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &308267631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308267626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648feb8e2add8844da70d340d8dbec1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyPartInt: 0
 --- !u!1 &323304787
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +859,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 277694591}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 277694594}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!1 &577962449
@@ -844,6 +974,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 913143993}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 913143996}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!1 &633783130
@@ -878,6 +1011,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 242270277}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 242270280}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!212 &633783132
@@ -1068,6 +1204,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 913143993}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 913143996}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!1 &889745592
@@ -1180,6 +1319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 913143993}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 913143996}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!1 &913143993
@@ -1316,6 +1458,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 1700732812}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 1700732815}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!212 &1051409545
@@ -1428,6 +1573,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 242270277}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 242270280}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!212 &1092531206
@@ -1540,6 +1688,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 242270277}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 242270280}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!212 &1128842803
@@ -1718,6 +1869,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 242270277}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 242270280}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!212 &1221618353
@@ -1905,6 +2059,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 1700732812}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 1700732815}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!212 &1528333303
@@ -2097,6 +2254,10 @@ PrefabInstance:
     - target: {fileID: 4906279644010012021, guid: 61ffe0e0d6bcd69478eac5c706006bc7, type: 3}
       propertyPath: m_Name
       value: MicrogameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906279644010012022, guid: 61ffe0e0d6bcd69478eac5c706006bc7, type: 3}
+      propertyPath: currentState
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4906279644010012023, guid: 61ffe0e0d6bcd69478eac5c706006bc7, type: 3}
       propertyPath: m_RootOrder
@@ -2337,6 +2498,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctPosition: {fileID: 913143993}
+  sceneTransition: {fileID: 308267626}
+  bodyPartPickUpClip: {fileID: 8300000, guid: b87c9b372d54eec44843875e3d545ee0, type: 3}
+  bagClip: {fileID: 8300000, guid: 5dff6ea87e22a80408efbf69ad4af2b1, type: 3}
   bagAnimator: {fileID: 913143996}
   bagSprite: {fileID: -6631149748959506250, guid: 27d2eed7b86a4794494d86bb046f39f1, type: 3}
 --- !u!1001 &1972403560
