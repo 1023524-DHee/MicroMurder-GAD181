@@ -6,7 +6,7 @@ public class IntManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public int cutInt = 0;
-    
+    bool isCut = false;
     
     void Start()
     {
@@ -16,11 +16,15 @@ public class IntManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TransitionScene();
+    } 
 
-        if (cutInt == 5)
+    void TransitionScene()
+    {
+        if (cutInt == 5 && isCut == false)
         {
             MicrogameManager.current.LoadNextMicrogame();
+            isCut = true;
         }
-
     }
-}
+}  
