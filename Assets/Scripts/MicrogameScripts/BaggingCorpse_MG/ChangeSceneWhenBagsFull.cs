@@ -2,29 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IntManager : MonoBehaviour
+public class ChangeSceneWhenBagsFull : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public int cutInt = 0;
-    bool isCut = false;
+    public int bodyPartInt;
+    bool bagsFull = false;
     
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         TransitionScene();
-    } 
+    }
 
     void TransitionScene()
     {
-        if (cutInt == 5 && isCut == false)
+        if (bodyPartInt == 12 && bagsFull == false)
         {
             MicrogameManager.current.LoadNextMicrogame();
-            isCut = true;
+            bagsFull = true;
         }
     }
-}  
+}

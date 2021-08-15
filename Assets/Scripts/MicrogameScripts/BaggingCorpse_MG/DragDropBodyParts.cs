@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragDropScript : MonoBehaviour
+public class DragDropBodyParts : MonoBehaviour
 {
-    public GameObject correctPosition;
-    public AudioClip textPickupClip, textPlacedClip, textPlacedFailClip;
+    public GameObject correctPosition, sceneTransition;
+    public AudioClip bodyPartPickUpClip, bagClip;
     public Animator bagAnimator;
+    public Sprite bagSprite; 
     
     private bool moving;
     private bool inPosition;
@@ -36,8 +37,8 @@ public class DragDropScript : MonoBehaviour
         }
     }
 
-	private void OnMouseDown()
-	{
+    private void OnMouseDown()
+    {
         Vector3 mousePos;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -45,8 +46,8 @@ public class DragDropScript : MonoBehaviour
         startPosY = mousePos.y - transform.position.y;
 
         moving = true;
-        AudioManager.current.PlaySound(textPickupClip);
 
+        BaggingCorpseAudioManager.current.PlayBodyPickUpSound(bodyPartPickUpClip);
         StartFlash();
     }
 
@@ -54,38 +55,37 @@ public class DragDropScript : MonoBehaviour
     {
         moving = false;
 
-         if (Mathf.Abs(transform.position.x - correctPosition.transform.position.x) <= 2f &&
-            Mathf.Abs(transform.position.y - correctPosition.transform.position.y) <= 1f)
+        if (Mathf.Abs(transform.position.x - correctPosition.transform.position.x) <= 2f &&
+           Mathf.Abs(transform.position.y - correctPosition.transform.position.y) <= 1f)
         {
             transform.position = new Vector3(correctPosition.transform.position.x, correctPosition.transform.position.y, 0);
             transform.eulerAngles = new Vector3(0, 0, 0);
             inPosition = true;
 
-            DisclaimerEventManager.current.TextPlaced();
-            AudioManager.current.PlaySound(textPlacedClip);
 
+            sceneTransition.GetComponent<ChangeSceneWhenBagsFull>().bodyPartInt++;
+            BaggingCorpseAudioManager.current.PlayBagSound(bagClip);
             StopFlash();
         }
         else
         {
             transform.position = resetPosition;
-            AudioManager.current.PlaySound(textPlacedFailClip);
 
+            BaggingCorpseAudioManager.current.PlayBodyPickUpSound(bodyPartPickUpClip);
             StopFlash();
         }
     }
-    
+
     void StartFlash()
     {
         bagAnimator.enabled = true;
-        //bagAnimator.SetBool("Flash", true);
-        Debug.Log("flashing");
-    } 
+    }
 
     void StopFlash()
     {
         bagAnimator.enabled = false;
-        //bagAnimator.SetBool("Flash", false);
-        Debug.Log("not flashing");
+        correctPosition.GetComponent<SpriteRenderer>().sprite = bagSprite; 
     }
 } 
+
+

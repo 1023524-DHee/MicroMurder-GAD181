@@ -385,6 +385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyPartCut: {fileID: -1618567061052157611, guid: 01f11d8622d03f74bbb847d92e459f6d, type: 3}
   managerObject: {fileID: 1669394762}
+  chargeBar: {fileID: 2084193979}
+  cutClip: {fileID: 8300000, guid: 72e75e45310e32e489a19d54e6199e77, type: 3}
 --- !u!65 &499793513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -672,6 +674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyPartCut: {fileID: -7633151329643680705, guid: 01f11d8622d03f74bbb847d92e459f6d, type: 3}
   managerObject: {fileID: 1669394762}
+  chargeBar: {fileID: 2084193979}
+  cutClip: {fileID: 8300000, guid: 72e75e45310e32e489a19d54e6199e77, type: 3}
 --- !u!65 &789010917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -882,8 +886,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 390, y: -36}
-  m_SizeDelta: {x: 85.8174, y: 85.8174}
+  m_AnchoredPosition: {x: -297.5, y: 231}
+  m_SizeDelta: {x: 45.1826, y: 44.1829}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616929694
 MonoBehaviour:
@@ -1040,6 +1044,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyPartCut: {fileID: 4601702605382263660, guid: 01f11d8622d03f74bbb847d92e459f6d, type: 3}
   managerObject: {fileID: 1669394762}
+  chargeBar: {fileID: 2084193979}
+  cutClip: {fileID: 8300000, guid: 72e75e45310e32e489a19d54e6199e77, type: 3}
 --- !u!65 &1666757210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1064,6 +1070,8 @@ GameObject:
   - component: {fileID: 1669394764}
   - component: {fileID: 1669394763}
   - component: {fileID: 1669394765}
+  - component: {fileID: 1669394766}
+  - component: {fileID: 1669394767}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
@@ -1149,6 +1157,114 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutInt: 0
+--- !u!114 &1669394766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669394762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccbd817ff77e4b4c8523e21976edf9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &1669394767
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669394762}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1808160703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,6 +1381,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyPartCut: {fileID: 6738415656033071170, guid: 01f11d8622d03f74bbb847d92e459f6d, type: 3}
   managerObject: {fileID: 1669394762}
+  chargeBar: {fileID: 2084193979}
+  cutClip: {fileID: 8300000, guid: 72e75e45310e32e489a19d54e6199e77, type: 3}
 --- !u!212 &1955703128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1356,6 +1474,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06118253, y: 0.15739286}
   m_EdgeRadius: 0
+--- !u!1 &2084193979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8076208137167677708, guid: 60a1f8548ef617a4f9e13b331a8e426c, type: 3}
+  m_PrefabInstance: {fileID: 8076208135829754231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2119336727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1577,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyPartCut: {fileID: -7338440088705634936, guid: 01f11d8622d03f74bbb847d92e459f6d, type: 3}
   managerObject: {fileID: 1669394762}
+  chargeBar: {fileID: 2084193979}
+  cutClip: {fileID: 8300000, guid: 72e75e45310e32e489a19d54e6199e77, type: 3}
 --- !u!65 &2119336731
 BoxCollider:
   m_ObjectHideFlags: 0
