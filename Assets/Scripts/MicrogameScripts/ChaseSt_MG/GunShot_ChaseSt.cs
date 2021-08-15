@@ -13,6 +13,8 @@ public class GunShot_ChaseSt : MonoBehaviour
     void Start()
     {
         ChaseStGEM.current.onDifficultyUp += ChangeNumberOfShots;
+        ChaseStGEM.current.onGameEnd += GameEndCleanup;
+
         numberOfShots = 1;
         Invoke("SelectRandomPosition_CoroutineStart", 3f);
     }
@@ -57,6 +59,7 @@ public class GunShot_ChaseSt : MonoBehaviour
         // Call ShootBullet for each randomly selected index
         foreach (int index in randomPositionIndexes)
         {
+            GetComponent<AudioSource>().Play();
             gunShotPositions[index].GetComponent<SpriteRenderer>().color = Color.red;
             yield return new WaitForSeconds(0.05f);
             gunShotPositions[index].GetComponent<SpriteRenderer>().enabled = false;
@@ -74,7 +77,18 @@ public class GunShot_ChaseSt : MonoBehaviour
     private void ChangeNumberOfShots()
     {
         numberOfShots++;
-        shotPreviewTime += 0.25f;
-        if (numberOfShots > 4) numberOfShots = 4;
+        if (numberOfShots > 3)
+        {
+            numberOfShots = 3;
+        }
+        else if (numberOfShots <= 3)
+        {
+            shotPreviewTime += 0.15f;
+        }
+    }
+
+    private void GameEndCleanup()
+    {
+        StopAllCoroutines();
     }
 }
