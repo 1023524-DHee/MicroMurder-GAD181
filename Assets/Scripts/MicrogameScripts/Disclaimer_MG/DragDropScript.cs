@@ -77,6 +77,7 @@ public class DragDropScript : MonoBehaviour
     
     void StartFlash()
     {
+        if (bagAnimator == null) return;
         bagAnimator.enabled = true;
         //bagAnimator.SetBool("Flash", true);
         Debug.Log("flashing");
@@ -84,6 +85,7 @@ public class DragDropScript : MonoBehaviour
 
     void StopFlash()
     {
+        if (bagAnimator == null) return;
         bagAnimator.enabled = false;
         //bagAnimator.SetBool("Flash", false);
         Debug.Log("not flashing");
