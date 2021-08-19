@@ -6,6 +6,7 @@ using UnityEngine;
 public class TrialGEM : MonoBehaviour
 {
 	private float finalPlayerHealth;
+	private bool playerWin;
 
 	public static TrialGEM current;
 
@@ -33,6 +34,12 @@ public class TrialGEM : MonoBehaviour
 		if (onWrongResponseClicked != null) onWrongResponseClicked();
 	}
 
+	public event Action onHammerSlammed;
+	public void HammerSlammed()
+	{
+		if (onHammerSlammed != null) onHammerSlammed();
+	}
+
 	public event Action onGameEnd;
 	public void GameEnd()
 	{
@@ -46,6 +53,11 @@ public class TrialGEM : MonoBehaviour
 	public void SetPlayerHealth(float health)
 	{
 		finalPlayerHealth = health;
+	}
+
+	public void SetPlayerWin(bool winOrLose)
+	{
+		playerWin = winOrLose;
 	}
 
 	IEnumerator GameEnd_Coroutine()

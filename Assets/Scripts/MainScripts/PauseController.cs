@@ -38,7 +38,7 @@ public class PauseController : MonoBehaviour
 
     public void ResumeGame()
     {
-        if (startGameButton != null) startGameButton.GetComponent<Animator>().enabled = false;
+        if (startGameButton != null) startGameButton.SetActive(false);
         gameIsPaused = false;
         AudioListener.pause = false;
         Time.timeScale = 1f;

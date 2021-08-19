@@ -21,6 +21,11 @@ public class PlayerHealth_Trial : MonoBehaviour
     {
         healthBarImage.fillAmount -= damageAmount;
         Camera.main.GetComponent<ScreenShake>().TriggerShake();
+        if (healthBarImage.fillAmount <= 0f)
+        {
+            TrialGEM.current.SetPlayerWin(false);
+            TrialGEM.current.GameEnd();
+        }
     }
 
     private void GainHealth()
