@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ChaseStGEM : MonoBehaviour
 {
+	private bool playerWin;
+
     public static ChaseStGEM current;
 
 	private void Awake()
@@ -31,10 +33,33 @@ public class ChaseStGEM : MonoBehaviour
 		if (onDifficultyUp != null) onDifficultyUp();
 	}
 
+	public event Action onGameEnd;
+	public void GameEnd()
+	{
+		if (onGameEnd != null)
+		{
+			onGameEnd();
+			StopAllCoroutines();
+			StartCoroutine(GameEnd_Coroutine());
+		}
+	}
+
+	public void SetPlayerWinState(bool winOrLose)
+	{
+		playerWin = winOrLose;
+	}
+
+	IEnumerator GameEnd_Coroutine()
+	{
+		yield return new WaitForSeconds(2f);
+		if (playerWin) MicrogameManager.current.LoadNextMicrogame();
+		else SceneTransitionManager.current.ReloadCurrentScene();
+	}
+
 	IEnumerator Timer()
 	{
 		DifficultyUp();
-		yield return new WaitForSeconds(7.5f);
+		yield return new WaitForSeconds(10f);
 		StartCoroutine(Timer());
 	}
 }
