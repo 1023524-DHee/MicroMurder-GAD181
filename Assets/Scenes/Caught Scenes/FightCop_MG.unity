@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 1890212273}
   - component: {fileID: 1890212272}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Instructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a9ca726531520df4fb9fe12db7eb81e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 931d56e4d5d82a4458321b9077fb7833, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1554,6 +1554,18 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1583,11 +1595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 329.3
+      value: 319.1
       objectReference: {fileID: 0}
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -215.1
+      value: -199.3
       objectReference: {fileID: 0}
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
