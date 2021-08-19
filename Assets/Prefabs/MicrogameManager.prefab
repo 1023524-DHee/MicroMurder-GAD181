@@ -55,7 +55,6 @@ MonoBehaviour:
   cleanupMicrogames:
   - AxeCutting_MG
   - BaggingCorpse_MG
-  - CleaningWeapon_MG
   chaseMicrogames:
   - CarChase_MG
   - RunningSt_MG
@@ -64,12 +63,12 @@ MonoBehaviour:
   - FightCop_MG
   - Trial_MG
   jailMicrogames:
-  - LiftWeights_MG
   - FightInmates_MG
   mainMenuSceneName: MainMenu
   startingMicrogame: Disclaimer_MG
   endSceneName: EndScene
-  currentState: 3
+  escapePanel: {fileID: 0}
+  currentState: 6
 --- !u!114 &6451883450175832031
 MonoBehaviour:
   m_ObjectHideFlags: 0
