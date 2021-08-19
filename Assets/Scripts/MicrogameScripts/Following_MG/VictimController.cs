@@ -84,19 +84,16 @@ public class VictimController : MonoBehaviour
             {
                 audio.clip = footsteps;
                 audio.Play(0);
-                print("walking");
             }
         }
         else if (!shouldMove)
         {
             audio.clip = huh;
             audio.Play(0);
-            print("huh");
         }
         else
         {
             audio.Stop();
-            print("stopped");
         }
 
     }

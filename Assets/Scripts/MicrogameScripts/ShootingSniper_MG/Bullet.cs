@@ -5,29 +5,22 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
+
     private GameObject PlayerGO;
-    private Vector2 direction;
-    private Vector3 mousePosition;
-
     private bool canFire = false;
-
-    void Start()
-    {
-        direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        direction = direction.normalized;
-    }
 
     void Update()
     {
-        transform.position = direction * speed * Time.deltaTime;
-
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        if(Input.GetMouseButtonDown(0) && canFire && PlayerGO != null)
+        if (Input.GetMouseButtonDown(0) && canFire && PlayerGO != null)
         {
-           
+
             // Call DestroyMyself function
             DestroyMyself.current.DestroyFunction(PlayerGO);
+        }
+        else if (Input.GetMouseButtonDown(0) && !canFire)
+        {
+            GetComponent<AudioSource>().Play();
+            SceneTransitionManager.current.ReloadCurrentScene();
         }
     }
 

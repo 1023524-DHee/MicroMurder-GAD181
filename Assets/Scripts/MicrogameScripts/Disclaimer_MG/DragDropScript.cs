@@ -6,7 +6,8 @@ public class DragDropScript : MonoBehaviour
 {
     public GameObject correctPosition;
     public AudioClip textPickupClip, textPlacedClip, textPlacedFailClip;
-
+    public Animator bagAnimator;
+    
     private bool moving;
     private bool inPosition;
 
@@ -45,13 +46,15 @@ public class DragDropScript : MonoBehaviour
 
         moving = true;
         AudioManager.current.PlaySound(textPickupClip);
+
+        StartFlash();
     }
 
-	private void OnMouseUp()
-	{
+    private void OnMouseUp()
+    {
         moving = false;
 
-        if (Mathf.Abs(transform.position.x - correctPosition.transform.position.x) <= 2f && 
+         if (Mathf.Abs(transform.position.x - correctPosition.transform.position.x) <= 2f &&
             Mathf.Abs(transform.position.y - correctPosition.transform.position.y) <= 1f)
         {
             transform.position = new Vector3(correctPosition.transform.position.x, correctPosition.transform.position.y, 0);
@@ -60,11 +63,31 @@ public class DragDropScript : MonoBehaviour
 
             DisclaimerEventManager.current.TextPlaced();
             AudioManager.current.PlaySound(textPlacedClip);
+
+            StopFlash();
         }
         else
         {
             transform.position = resetPosition;
             AudioManager.current.PlaySound(textPlacedFailClip);
+
+            StopFlash();
         }
     }
-}
+    
+    void StartFlash()
+    {
+        if (bagAnimator == null) return;
+        bagAnimator.enabled = true;
+        //bagAnimator.SetBool("Flash", true);
+        Debug.Log("flashing");
+    } 
+
+    void StopFlash()
+    {
+        if (bagAnimator == null) return;
+        bagAnimator.enabled = false;
+        //bagAnimator.SetBool("Flash", false);
+        Debug.Log("not flashing");
+    }
+} 
