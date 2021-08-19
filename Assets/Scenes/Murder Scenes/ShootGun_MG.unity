@@ -308,7 +308,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 13a733a904664334ba79a4f8e6ba06fe, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.57
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1494,6 +1494,18 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1523,11 +1535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 315
+      value: 305
       objectReference: {fileID: 0}
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -206
+      value: -178.6
       objectReference: {fileID: 0}
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1544,6 +1556,10 @@ PrefabInstance:
     - target: {fileID: 601029607026039218, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_Name
       value: StartGameButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 601029607026039218, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
@@ -1692,7 +1708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d1cdf99640d73b74a9ce4152716015dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c97a440545dfd64888658f1500c7e24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
