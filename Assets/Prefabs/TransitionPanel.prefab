@@ -187,8 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 1410253057853574204}
-  transitionTime: 8
-  transitionTriggerName: PreMurder_Transition
+  transitionTime: 10
   pauseGame: 0
 --- !u!114 &5862133208995326695
 MonoBehaviour:

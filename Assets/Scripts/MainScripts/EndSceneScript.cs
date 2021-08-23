@@ -5,8 +5,8 @@ using UnityEngine;
 public class EndSceneScript : MonoBehaviour
 {
     public Animator sceneAnimator;
-
     public AudioClip laughClip, ambientClip, crunchClip, highPitchClip;
+    public List<GameObject> enableObjects, disableObjects;
 
     private AudioSource audioSource;
 
@@ -41,6 +41,14 @@ public class EndSceneScript : MonoBehaviour
 
     private void EndAnimation()
     {
-        MicrogameManager.current.LoadNextMicrogame();
+        foreach (GameObject thing in enableObjects)
+        {
+            thing.SetActive(true);
+        }
+
+        foreach (GameObject thing in disableObjects)
+        {
+            thing.SetActive(false);
+        }
     }
 }

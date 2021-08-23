@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ChargeBar : MonoBehaviour
 {
+    private float timeSinceLastTickUp, timeSinceLastTickDown;
+
     public float chargeBarAmount;
     public List<Sprite> chargeBarSprites = new List<Sprite>();
     public Animator chargeBarAnimator;
@@ -17,38 +19,59 @@ public class ChargeBar : MonoBehaviour
 
     void Update()
     {
-        if (chargeBarAmount != 0f)
-        {
-            StartCoroutine("DecreaseChargeCoroutine");
-        }
+        //if (chargeBarAmount != 0f)
+        //{
+        //    StartCoroutine("DecreaseChargeCoroutine");
+        //}
 
-        if(Input.GetMouseButton(0))
+        //if(Input.GetMouseButton(0))
+        //{
+        //    IncreaseCharge();
+        //}
+
+        //ChargeBarImageChange();
+
+        //if (chargeBarAmount < 11f)
+        //{
+        //    StopFlash();
+        //}
+        //if (chargeBarAmount == 0f)
+        //{
+        //    StopCoroutine("DecreaseChargeCoroutine");
+        //}
+
+        if (Input.GetMouseButton(0))
         {
             IncreaseCharge();
+        }
+        else
+        {
+            DecreaseCharge();
         }
 
         ChargeBarImageChange();
 
-        if (chargeBarAmount < 11f)
-        {
-            StopFlash();
-        }
-        if (chargeBarAmount == 0f)
-        {
-            StopCoroutine("DecreaseChargeCoroutine");
-        }
+        print(chargeBarAmount);
+    }
 
+    private void IncreaseCharge()
+    {
+        chargeBarAmount = Mathf.Clamp(chargeBarAmount++, 0f, 100f);
+    }
 
-    }
-    
-    public void IncreaseCharge()
+    private void DecreaseCharge()
     {
-        if(chargeBarAmount < 12f) chargeBarAmount++;
+        chargeBarAmount = Mathf.Clamp(chargeBarAmount++, 0f, 100f);
     }
-    public void DecreaseCharge()
-    {
-        chargeBarAmount--;
-    }
+
+    //public void IncreaseCharge()
+    //{
+    //    if(chargeBarAmount < 12f) chargeBarAmount++;
+    //}
+    //public void DecreaseCharge()
+    //{
+    //    chargeBarAmount--;
+    //}
 
     void ChargeBarImageChange()
     {
@@ -115,13 +138,13 @@ public class ChargeBar : MonoBehaviour
                 DecreaseCharge();
                 yield return null;
             }
-           
+            
         }
         
         //DecreaseCharge();
         yield return null;
     }
-    
+
     void StartFlash()
     {
         chargeBarAnimator.enabled = true;

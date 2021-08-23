@@ -10,7 +10,6 @@ public class SceneTransitionManager : MonoBehaviour
     public Animator transitionAnimator;
 
     public float transitionTime;
-    public string transitionTriggerName;
     public bool pauseGame = true;
 
 	private void Awake()
@@ -42,7 +41,31 @@ public class SceneTransitionManager : MonoBehaviour
     {
         transitionAnimator.gameObject.GetComponent<Image>().raycastTarget = true;
         transitionAnimator.SetTrigger("StartDimming");
-        transitionAnimator.SetTrigger(transitionTriggerName);
+
+        switch (MicrogameManager.current.currentState)
+        {
+            case MicrogameState.START:
+                transitionAnimator.SetTrigger("PreMurder_Transition");
+                break;
+            case MicrogameState.PREMURDER:
+                transitionAnimator.SetTrigger("Murder_Transition");
+                break;
+            case MicrogameState.MURDER:
+                transitionAnimator.SetTrigger("CleanUp_Transition");
+                break;
+            case MicrogameState.CLEANUP:
+                transitionAnimator.SetTrigger("Chase_Transition");
+                break;
+            case MicrogameState.CHASE:
+                transitionAnimator.SetTrigger("Caught_Transition");
+                break;
+            case MicrogameState.CAUGHT:
+                transitionAnimator.SetTrigger("Jail_Transition");
+                break;
+            case MicrogameState.JAIL:
+                transitionAnimator.SetTrigger("End_Transition");
+                break;
+        }
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneName);
     }

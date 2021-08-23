@@ -34,7 +34,7 @@ public class Gun_ShootGunMG : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
 		{
-			percentageSlowdown = Mathf.Clamp(percentageSlowdown - 0.1f, 0, 100);
+			percentageSlowdown = Mathf.Clamp(percentageSlowdown - 0.25f, 0, 100);
 			currentSpeed = Mathf.Clamp(maxSpeed * percentageSlowdown / 100f, 1f, maxSpeed);
 		}
 
@@ -64,6 +64,7 @@ public class Gun_ShootGunMG : MonoBehaviour
 
     private void GameEndedCleanup()
     {
+        Cursor.visible = true;
         gameEnded = true;
     }
 }

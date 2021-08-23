@@ -962,14 +962,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartGameButton
       objectReference: {fileID: 0}
-    - target: {fileID: 6898135274169811678, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 583.5986
-      objectReference: {fileID: 0}
-    - target: {fileID: 6898135274169811678, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -398.92365
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
 --- !u!224 &819990720 stripped
