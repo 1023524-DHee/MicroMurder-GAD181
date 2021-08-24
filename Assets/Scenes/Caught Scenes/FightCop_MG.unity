@@ -756,7 +756,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ae2fc85f3bba86d48abfc1963aa1e6ec, type: 3}
-  m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -791,17 +791,9 @@ PrefabInstance:
       propertyPath: pauseGame
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1942088320, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
-      propertyPath: transitionTriggerName
-      value: Jail_Transition
-      objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574194, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_Name
       value: TransitionPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1410253057853574194, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_Pivot.x
@@ -894,17 +886,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
   m_PrefabInstance: {fileID: 895075391}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &930160418 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6451883450175832031, guid: 61ffe0e0d6bcd69478eac5c706006bc7, type: 3}
-  m_PrefabInstance: {fileID: 431577386}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c3426056b2743840b5e276a8c5c9c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &986655872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,10 +1494,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 44359107}
     m_Modifications:
-    - target: {fileID: 601029607026039180, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 930160418}
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1552,18 +1529,6 @@ PrefabInstance:
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 601029607026039181, guid: a476da690a9993b46ad4a4953a03d40c, type: 3}
       propertyPath: m_LocalPosition.x
