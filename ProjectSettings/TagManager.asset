@@ -11,6 +11,7 @@ TagManager:
   - Obstacles
   - Victim
   - StartButton
+  - ScrollingText
   layers:
   - Default
   - TransparentFX

@@ -8,20 +8,27 @@ public class Bullet : MonoBehaviour
 
     private GameObject PlayerGO;
     private bool canFire = false;
+    private bool alreadyFired = false;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canFire && PlayerGO != null)
+        if (!alreadyFired)
         {
-
-            // Call DestroyMyself function
-            DestroyMyself.current.DestroyFunction(PlayerGO);
+            if (Input.GetMouseButtonDown(0) && canFire && PlayerGO != null)
+            {
+                GetComponent<AudioSource>().Play();
+                // Call DestroyMyself function
+                DestroyMyself.current.DestroyFunction(PlayerGO);
+                alreadyFired = true;
+            }
+            else if (Input.GetMouseButtonDown(0) && !canFire)
+            {
+                GetComponent<AudioSource>().Play();
+                SceneTransitionManager.current.ReloadCurrentScene();
+                alreadyFired = true;
+            }
         }
-        else if (Input.GetMouseButtonDown(0) && !canFire)
-        {
-            GetComponent<AudioSource>().Play();
-            SceneTransitionManager.current.ReloadCurrentScene();
-        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)

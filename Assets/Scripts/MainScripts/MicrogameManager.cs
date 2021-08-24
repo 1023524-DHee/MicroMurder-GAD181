@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum MicrogameState
 {
@@ -31,6 +32,7 @@ public class MicrogameManager : MonoBehaviour
 	{
 		current = this;
 		AudioListener.pause = false;
+		Cursor.visible = true;
 	}
 
 	public void LoadNextMicrogame()
@@ -59,11 +61,18 @@ public class MicrogameManager : MonoBehaviour
 				break;
 			// Starts Clean Up Microgames
 			case MicrogameState.MURDER:
-				nextMicrogame = RandomiseMicrogame(cleanupMicrogames);
+				nextMicrogame = cleanupMicrogames[0];
 				break;
 			// Starts Chase Microgames
 			case MicrogameState.CLEANUP:
-				nextMicrogame = RandomiseMicrogame(chaseMicrogames);
+				if (SceneManager.GetActiveScene().name == cleanupMicrogames[0])
+				{
+					nextMicrogame = cleanupMicrogames[1];
+				}
+				else
+				{
+					nextMicrogame = RandomiseMicrogame(chaseMicrogames);
+				}
 				break;
 			// Starts Caught Microgames
 			case MicrogameState.CHASE:

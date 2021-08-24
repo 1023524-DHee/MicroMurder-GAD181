@@ -43,6 +43,7 @@ public class ScrollerScript : MonoBehaviour
         switch (scrollDirection)
         {
             case ScrollDirection.X_AXIS:
+                rb.velocity = new Vector2(speed, 0);
                 if (transform.position.x < -width && loop)
                 {
                     Vector2 vector = new Vector2(width * 2f, 0);
@@ -50,6 +51,7 @@ public class ScrollerScript : MonoBehaviour
                 }
                 break;
             case ScrollDirection.Y_AXIS:
+                rb.velocity = new Vector2(0, speed);
                 if (transform.position.y < -height && loop)
                 {
                     Vector2 vector = new Vector2(0, height * 2f);

@@ -26,19 +26,12 @@ public class FollowMouse : MonoBehaviour
         {
             MoveMouseNoBounds();
         }
-
-        
     }
 
     void MoveMouseNoBounds()
     {
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(cursorPos.x, cursorPos.y);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Cursor.visible = true;  // displays cursor
-        }
     }
 
     void MoveMouseWithBounds()

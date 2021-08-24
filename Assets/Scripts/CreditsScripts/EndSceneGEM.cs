@@ -11,11 +11,19 @@ public class EndSceneGEM : MonoBehaviour
 
     public static EndSceneGEM current;
 	public TMP_Text killsText, shotsText;
-	public Animator creditsScoreAnimator;
+	public Animator creditsScoreAnimator, angelAnimator, devilAnimator;
 
 	private void Awake()
 	{
         current = this;
+	}
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			SkipCredits();
+		}
 	}
 
 	public event Action onTextShot;
@@ -45,10 +53,26 @@ public class EndSceneGEM : MonoBehaviour
 		namesKilled++;
 	}
 
+	public void SkipCredits()
+	{
+		GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("ScrollingText");
+		foreach (GameObject objects in gameObjects)
+		{
+			objects.GetComponent<ScrollerScript>().speed = 30f;
+		}
+	}
+
 	public void ReportStats()
 	{
 		killsText.text = "" + namesKilled;
 		shotsText.text = "" + shotsFired;
+		angelAnimator.SetTrigger("TriggerEnd");
+		devilAnimator.SetTrigger("TriggerEnd");
+	}
+
+	IEnumerator GameEnd_Coroutine()
+	{
+		yield return new WaitForSeconds(15f);
 		if (namesKilled == 0)
 		{
 			creditsScoreAnimator.SetTrigger("End1");
@@ -61,10 +85,6 @@ public class EndSceneGEM : MonoBehaviour
 		{
 			creditsScoreAnimator.SetTrigger("End3");
 		}
-	}
-
-	IEnumerator GameEnd_Coroutine()
-	{
 		yield return new WaitForSeconds(10f);
 		MicrogameManager.current.LoadNextMicrogame();
 	}

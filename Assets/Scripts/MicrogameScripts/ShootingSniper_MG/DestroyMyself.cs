@@ -10,11 +10,9 @@ public class DestroyMyself : MonoBehaviour
 
     {
         Cursor.visible = true;
-        GetComponent<AudioSource>().Play();
         GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
         playerGO.SetActive(false);
         MicrogameManager.current.LoadNextMicrogame();
-
     }
 
     void Start()
