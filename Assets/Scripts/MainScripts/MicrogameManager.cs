@@ -30,6 +30,7 @@ public class MicrogameManager : MonoBehaviour
 	private void Awake()
 	{
 		current = this;
+		AudioListener.pause = false;
 	}
 
 	public void LoadNextMicrogame()

@@ -39,6 +39,7 @@ public class SceneTransitionManager : MonoBehaviour
 
     IEnumerator LoadLevel(string sceneName)
     {
+        AudioListener.pause = true;
         transitionAnimator.gameObject.GetComponent<Image>().raycastTarget = true;
         if(MicrogameManager.current.currentState != MicrogameState.START) transitionAnimator.SetTrigger("StartDimming");
 

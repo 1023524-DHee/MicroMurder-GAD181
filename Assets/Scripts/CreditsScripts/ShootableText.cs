@@ -8,6 +8,7 @@ public class ShootableText : MonoBehaviour
     private bool triggered;
 
     public List<GameObject> bloodPrefabs;
+    public AudioClip gunSound;
     public int maxHealth;
     public bool invulnerableText;
 
@@ -28,9 +29,11 @@ public class ShootableText : MonoBehaviour
 
 	private void TakeDamage()
     {
+        AudioSource.PlayClipAtPoint(gunSound, transform.position);
         currentHealth--;
         if (currentHealth <= 0)
         {
+            EndSceneGEM.current.NameKilled();
             Destroy(gameObject);
         }
     }

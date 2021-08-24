@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: 2125698414949367209, guid: bead1ac77cd521d4e87363df6ca5fa06, type: 3}
   - {fileID: 8419415178193996288, guid: d4d61367d6b73a1489d6c43bfa476a1d, type: 3}
   - {fileID: 3765332787678451921, guid: f158ec038cef154458d9a3012285877e, type: 3}
+  gunSound: {fileID: 8300000, guid: 86649234ac4573e4982dc7c926e5a7fe, type: 3}
   maxHealth: 99
   invulnerableText: 0
 --- !u!114 &-6161504768989064110
