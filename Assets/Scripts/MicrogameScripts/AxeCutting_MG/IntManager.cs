@@ -7,11 +7,6 @@ public class IntManager : MonoBehaviour
     // Start is called before the first frame update
     public int cutInt = 0;
     bool isCut = false;
-    
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -23,8 +18,14 @@ public class IntManager : MonoBehaviour
     {
         if (cutInt == 5 && isCut == false)
         {
-            MicrogameManager.current.LoadNextMicrogame();
+            StartCoroutine(Transition_Coroutine());
             isCut = true;
         }
+    }
+
+    IEnumerator Transition_Coroutine()
+    {
+        yield return new WaitForSeconds(2f);
+        MicrogameManager.current.LoadNextMicrogame();
     }
 }  

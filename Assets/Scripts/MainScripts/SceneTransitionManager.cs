@@ -40,11 +40,14 @@ public class SceneTransitionManager : MonoBehaviour
     IEnumerator LoadLevel(string sceneName)
     {
         transitionAnimator.gameObject.GetComponent<Image>().raycastTarget = true;
-        transitionAnimator.SetTrigger("StartDimming");
+        if(MicrogameManager.current.currentState != MicrogameState.START) transitionAnimator.SetTrigger("StartDimming");
 
         switch (MicrogameManager.current.currentState)
         {
             case MicrogameState.START:
+                transitionAnimator.SetTrigger("StartMainTransition");
+                break;
+            case MicrogameState.DISCLAIMER:
                 transitionAnimator.SetTrigger("PreMurder_Transition");
                 break;
             case MicrogameState.PREMURDER:
