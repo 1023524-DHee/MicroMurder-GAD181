@@ -23,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pre-Murder Scenes/BoxLockpick_MG.unity
     guid: 6f1745a65ca5bb94282a6a3e4640ed85
-  - enabled: 0
-    path: Assets/Scenes/Murder Scenes/AxeMurder_MG.unity
-    guid: ba4a5846661063245a6f70458f907aef
   - enabled: 1
     path: Assets/Scenes/Murder Scenes/FightVictim_MG.unity
     guid: ab3836c9de55d2c4285edd054cd0094a
@@ -41,9 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CleanUp Scenes/BaggingCorpse_MG.unity
     guid: 100e2fe76c03709408943823b41c5271
-  - enabled: 1
-    path: Assets/Scenes/CleanUp Scenes/CleaningWeapon_MG.unity
-    guid: 2dadeffc9d0dba248b0b6975d2834d10
   - enabled: 1
     path: Assets/Scenes/Chase Scenes/CarChase_MG.unity
     guid: 7e32db069ae16c54b9dd73a3683d3c14
@@ -62,7 +56,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jail Scenes/FightInmates_MG.unity
     guid: 8e08a034fc5982846bf8ea7a202d7018
-  - enabled: 0
-    path: Assets/Scenes/Jail Scenes/LiftWeights_MG.unity
-    guid: dd35c68d1f2ba1b4892a6b6b68d907c0
   m_configObjects: {}

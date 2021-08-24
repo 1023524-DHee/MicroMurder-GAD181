@@ -1034,6 +1034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MicrogameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4906279644010012022, guid: 61ffe0e0d6bcd69478eac5c706006bc7, type: 3}
+      propertyPath: currentState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4906279644010012023, guid: 61ffe0e0d6bcd69478eac5c706006bc7, type: 3}
       propertyPath: m_RootOrder
       value: 0
