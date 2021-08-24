@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 1410253057853574194, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1410253057853574195, guid: b6adae135f42ae740a84b4c9cd4494e3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

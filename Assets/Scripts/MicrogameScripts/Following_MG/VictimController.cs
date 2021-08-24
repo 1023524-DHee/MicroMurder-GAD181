@@ -21,7 +21,6 @@ public class VictimController : MonoBehaviour
     public new AudioSource audio;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         transform.position = waypoints[waypointIndex].transform.position;
