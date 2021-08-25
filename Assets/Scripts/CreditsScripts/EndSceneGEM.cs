@@ -72,7 +72,7 @@ public class EndSceneGEM : MonoBehaviour
 
 	IEnumerator GameEnd_Coroutine()
 	{
-		yield return new WaitForSeconds(15f);
+		yield return new WaitForSeconds(17f);
 		if (namesKilled == 0)
 		{
 			creditsScoreAnimator.SetTrigger("End1");
